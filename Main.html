@@ -1,0 +1,29 @@
+<!doctype html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <form action="test.php" method="POST">
+        <input type="text" id="InputFrom" placeholder="From...">
+        <input type="text" id="InputTo" placeholder="To">
+        <button type="button" onclick="printInput()">Search</button>
+    </form>
+
+    <p id="Print"></p>
+
+
+<script>
+function printInput() {
+    var x = document.getElementById("InputFrom").value;
+    var y = document.getElementById("InputTo").value;
+    document.getElementById("Print").innerHTML = "From " + x + " to " + y;
+}
+</script>
+
+
+
+</body>
+</html>
