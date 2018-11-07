@@ -1,0 +1,73 @@
+[
+	{
+		"city": "paris",
+		"connectionWith": [
+            {
+                "city":"mâcon",
+                "departures":
+                    [
+                        {
+                            "dep":"20:40",
+                            "arr":"05:39",
+                            "express":"True"
+                        },
+                        {   
+                            "dep":"22:45",
+                            "arr":"01:08",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[49.40,37.05,27.15], 
+                "dist": 441 
+            }
+        ]
+	},
+	{
+		"city": "mâcon",
+		"connectionWith": [
+            {
+                "city":"paris",
+                "departures":
+                    [
+                        {
+                            "dep":"20:45",
+                            "arr":"06:15",
+                            "express":"True"
+                        },
+                        {   
+                            "dep":"00:43",
+                            "arr":"04:05",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[49.40,37.05,27.15], 
+                "dist": 441 
+            },
+            {
+                "city":"bourg",
+                "express":"False",
+                "departures":
+                    [
+                        {
+                            "dep":"06:00",
+                            "arr":"06:58",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"07:55",
+                            "arr":"08:59",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"15:30",
+                            "arr":"16:35",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[4.25,3.2,2.35], 
+                "dist": 38 
+            }
+        ]
+	}
+
+]
