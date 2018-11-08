@@ -2,7 +2,9 @@
 
 <head>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="scripts\jquery-3.3.1.min.js"></script>
+    <script src="scripts\script.js"></script>
+    <script type="text/javascript" src="citiesData.json"></script>
 </head>
 
 <body>
@@ -13,16 +15,7 @@
     </form>
 
     <p id="Print"></p>
-
-
-<script>
-function printInput() {
-    var x = document.getElementById("InputFrom").value;
-    var y = document.getElementById("InputTo").value;
-    document.getElementById("Print").innerHTML = "From " + x + " to " + y;
-}
-</script>
-
+    <p id="path"></p>
 
 
 </body>

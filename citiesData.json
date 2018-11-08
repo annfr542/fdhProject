@@ -68,6 +68,29 @@
                 "dist": 38 
             }
         ]
+    },
+    {
+		"city": "bourg",
+		"connectionWith": [
+            {
+                "city":"mâcon",
+                "departures":
+                    [
+                        {
+                            "dep":"20:40",
+                            "arr":"05:39",
+                            "express":"True"
+                        },
+                        {   
+                            "dep":"22:45",
+                            "arr":"01:08",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[49.40,37.05,27.15], 
+                "dist": 441 
+            }
+        ]
 	}
 
 ]
