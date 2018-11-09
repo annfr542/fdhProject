@@ -49,46 +49,6 @@ class Graph {
             console.log(i + " -> " + conc); 
         } 
     }  
-  
-    // function to performs BFS 
-    bfs(startingNode) 
-    { 
-    
-        // create a visited array 
-        var visited = []; 
-        for (var i = 0; i < this.noOfVertices; i++) 
-            visited[i] = false; 
-    
-        // Create an object for queue 
-        var q = []; 
-    
-        // add the starting node to the queue 
-        visited[startingNode] = true; 
-        q.push(startingNode); 
-    
-        // loop until queue is element 
-        while (!q.isEmpty()) { 
-            // get the element from the queue 
-            var getQueueElement = q.dequeue(); 
-    
-            // passing the current vertex to callback funtion 
-            console.log(getQueueElement); 
-    
-            // get the adjacent list for current vertex 
-            var get_List = this.AdjList.get(getQueueElement); 
-    
-            // loop through the list and add the elemnet to the 
-            // queue if it is not processed yet 
-            for (var i in get_List) { 
-                var neigh = get_List[i]; 
-    
-                if (!visited[neigh]) { 
-                    visited[neigh] = true; 
-                    q.enqueue(neigh); 
-                } 
-            } 
-        } 
-    }  
     
     // utility function for finding paths in graph 
     // from source to destination 
@@ -114,7 +74,7 @@ class Graph {
 
         while (q.length != 0) { 
             path = q.shift(); 
-            const last = path[path.length - 1]; 
+            const last = path[path.length-1];
     
             // if last vertex is the desired destination 
             // then print the path 
@@ -128,20 +88,18 @@ class Graph {
 
             for (i = 0; i < connectedNodes.length; i++) { 
                 if (!visited[connectedNodes[i]]) { 
-                    const newPath = path; 
+                    const newPath = path.slice(); 
                     newPath.push(connectedNodes[i]); 
                     q.push(newPath); 
 
                     // mark node as visited
                     visited[connectedNodes[i]] = true;
                 } 
+                
             } 
         }
         return 0 
     } 
-
-
-    // dfs(v) 
 } 
 
 
