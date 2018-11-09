@@ -62,6 +62,11 @@
                             "dep":"15:30",
                             "arr":"16:35",
                             "express":"False"
+                        },
+                        {
+                            "dep":"17:40",
+                            "arr":"18:45",
+                            "express":"False"
                         }
                     ],
                 "cost":[4.25,3.2,2.35], 
@@ -77,18 +82,56 @@
                 "departures":
                     [
                         {
-                            "dep":"20:40",
-                            "arr":"05:39",
-                            "express":"True"
+                            "dep":"11:14",
+                            "arr":"12:23",
+                            "express":"False"
                         },
                         {   
-                            "dep":"22:45",
-                            "arr":"01:08",
+                            "dep":"06:46",
+                            "arr":"07:50",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"08:55",
+                            "arr":"10:05",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"21:00",
+                            "arr":"22:10",
                             "express":"False"
                         }
                     ],
-                "cost":[49.40,37.05,27.15], 
-                "dist": 441 
+                "cost":[4.25,3.2,2.35], 
+                "dist": 38  
+            },
+            {
+                "city":"pont-d'ain",
+                "departures":
+                    [
+                        {
+                            "dep":"06:58",
+                            "arr":"07:30",
+                            "express":"True"
+                        },
+                        {   
+                            "dep":"08:59",
+                            "arr":"09:36",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"16:35",
+                            "arr":"17:11",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"18:45",
+                            "arr":"19:20",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[2.15,1.6,1.15], 
+                "dist": 19 
             }
         ]
 	}
