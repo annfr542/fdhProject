@@ -36,19 +36,36 @@ function printpath(path)
     return pathString;
 } 
 
+// computes the distance of the path
+function path_dist(path)
+{
+    let dist = 0;
+    for(i = 0; i < path.length-1; i++){
+        let j = 0;
+        let k = 0;
+        while(path[i] != data[j].city){
+            j++;
+        }
+        while(path[i+1] != data[j].connectionWith[k].city){
+            k++;
+        }
+        dist = dist + data[j].connectionWith[k].dist;
+    }
+    return dist;
+}
+
 function printInput() {
     inputFrom = document.getElementById("InputFrom").value;
     inputTo = document.getElementById("InputTo").value;
 
     // find path
-    let path = graph.findpath(inputFrom, inputTo)
+    let path = graph.findpath(inputFrom, inputTo);
+    let dist = path_dist(path);
 
     document.getElementById("Print").innerHTML = "From " + inputFrom + " to " + inputTo;
     document.getElementById("path").innerHTML = printpath(path);
+    document.getElementById("dist").innerHTML = dist;
 }
-
-
-
     
 
 
