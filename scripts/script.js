@@ -6,7 +6,7 @@ $.getJSON( "citiesData.json", function( json ) {
 
 // create a graph
 let graph;
-$.getScript("/scripts/graph.js", function() {
+$.getScript("./scripts/graph.js", function() {
     graph = new Graph(data.length);
     // Add all nodes
     for (i = 0; i < data.length; i++) { 
