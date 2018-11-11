@@ -30,19 +30,19 @@ class Graph {
     printGraph() 
     { 
         // get all the vertices 
-        var get_keys = this.AdjList.keys(); 
+        const get_keys = this.AdjList.keys(); 
     
         // iterate over the vertices 
-        for (var i of get_keys)  
+        for (let i of get_keys)  
     { 
             // great the corresponding adjacency list 
             // for the vertex 
-            var get_values = this.AdjList.get(i); 
-            var conc = ""; 
+            const get_values = this.AdjList.get(i); 
+            let conc = ""; 
     
             // iterate over the adjacency list 
             // concatenate the values into a string 
-            for (var j of get_values) 
+            for (let j of get_values) 
                 conc += j + " "; 
     
             // print the vertex and its adjacency list 
@@ -55,18 +55,16 @@ class Graph {
     findpath(src, dst) 
     { 
         // create a visited array 
-        var visited = []; 
-        for (var i = 0; i < this.noOfVertices; i++) 
+        let visited = []; 
+        for (let i = 0; i < this.noOfVertices; i++) 
             visited[i] = false; 
 
         // create a queue which stores 
         // the paths 
-        var q = []; 
-                    // queue<vector<int> > q; 
+        let q = [];  
     
         // path vector to store the current path 
-        // vector<int> path; 
-        var path = [];
+        let path = [];
         path.push(src); 
         q.push(path); 
 
@@ -84,7 +82,9 @@ class Graph {
                         
             // traverse to all the nodes connected to  
             // current vertex and push new path to queue 
+            
             const connectedNodes = this.AdjList.get(last);
+            console.log("kldslk");
 
             for (i = 0; i < connectedNodes.length; i++) { 
                 if (!visited[connectedNodes[i]]) { 
@@ -95,7 +95,6 @@ class Graph {
                     // mark node as visited
                     visited[connectedNodes[i]] = true;
                 } 
-                
             } 
         }
         return 0 
