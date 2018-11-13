@@ -3,11 +3,13 @@
 // create a graph class 
 class Graph { 
     // defining vertex array and 
-    // adjacent list 
+    // adjacent list and
+    // connections list with all edge information
     constructor(noOfVertices) 
     { 
         this.noOfVertices = noOfVertices; 
         this.AdjList = new Map(); 
+        this.connections = new Map();
     } 
   
   
@@ -23,7 +25,11 @@ class Graph {
     { 
         // get the list for vertex v and put the 
         // vertex w denoting edge betweeen v and w 
-        this.AdjList.get(v).push(w); 
+        this.AdjList.get(v).push(w.city); 
+                
+        const connction = {"departures": w.departures, "cost": w.cost, "dist": w.dist};
+        const key = v + w.city
+        this.connections.set(key, connction);
     } 
 
     // Prints the vertex and adjacency list 
@@ -43,7 +49,7 @@ class Graph {
             // iterate over the adjacency list 
             // concatenate the values into a string 
             for (let j of get_values) 
-                conc += j + " "; 
+                conc += j.city + " "; 
     
             // print the vertex and its adjacency list 
             console.log(i + " -> " + conc); 
@@ -84,7 +90,6 @@ class Graph {
             // current vertex and push new path to queue 
             
             const connectedNodes = this.AdjList.get(last);
-            console.log("kldslk");
 
             for (i = 0; i < connectedNodes.length; i++) { 
                 if (!visited[connectedNodes[i]]) { 
@@ -99,6 +104,12 @@ class Graph {
         }
         return 0 
     } 
+
+    // calculate the distance between two cities
+    getDistance(v,w){
+        const key = v + w;
+        return this.connections.get(key).dist;
+    }
 } 
 
 

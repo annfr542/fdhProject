@@ -134,6 +134,10 @@
                 "dist": 19 
             }
         ]
+    },
+    {
+		"city": "pont-d'ain",
+		"connectionWith": []
 	}
 
 ]

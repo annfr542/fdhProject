@@ -16,7 +16,7 @@ $.getScript("graph.js", function() {
     // Add all edges
     for (i = 0; i < data.length; i++) {
         for (j = 0; j < data[i].connectionWith.length; j++){
-            graph.addEdge(data[i].city,data[i].connectionWith[j].city);
+            graph.addEdge(data[i].city,data[i].connectionWith[j]);
         }
     }
     graph.printGraph();
@@ -37,7 +37,7 @@ function printpath(path)
 } 
 
 // computes the distance of the path
-function path_dist(path)
+/*function path_dist(path)
 {
     let dist = 0;
     for(i = 0; i < path.length-1; i++){
@@ -52,7 +52,19 @@ function path_dist(path)
         dist = dist + data[j].connectionWith[k].dist;
     }
     return dist;
-}
+} */
+
+function path_dist(path)
+{
+    let dist = 0;
+    for(i = 0; i < path.length-1; i++){
+        const next = i + 1;
+        dist = dist + graph.getDistance(path[i],path[i+1]);
+    }
+    return dist;
+} 
+
+
 
 function printInput() {
     inputFrom = document.getElementById("InputFrom").value;
