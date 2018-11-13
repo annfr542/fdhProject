@@ -1,26 +1,26 @@
-// load data
-let data;
-$.getJSON( "citiesData.json", function( json ) {
-   data = json;
-});
-
 // create a graph
 let graph;
-$.getScript("graph.js", function() {
-    graph = new Graph(data.length);
-    // Add all nodes
-    for (i = 0; i < data.length; i++) { 
-        graph.addVertex(data[i].city);
-    }
-
-    // Add all edges
-    for (i = 0; i < data.length; i++) {
-        for (j = 0; j < data[i].connectionWith.length; j++){
-            graph.addEdge(data[i].city,data[i].connectionWith[j]);
+$.getJSON( "citiesData.json", function( data ) {
+    $.getScript("graph.js", function() {
+        graph = new Graph(data.length);
+        // Add all nodes
+        for (i = 0; i < data.length; i++) { 
+            graph.addVertex(data[i].city);
         }
-    }
-    graph.printGraph();
+
+        // Add all edges
+        for (i = 0; i < data.length; i++) {
+            for (j = 0; j < data[i].connectionWith.length; j++){
+                graph.addEdge(data[i].city,data[i].connectionWith[j]);
+            }
+        }
+        graph.printGraph();
+    });
 });
+
+
+
+
 
 // make sure we can use the graph library
 
