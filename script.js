@@ -19,9 +19,6 @@ $.getJSON( "citiesData.json", function( data ) {
 });
 
 
-
-
-
 // make sure we can use the graph library
 
 let inputFrom = "";
@@ -37,23 +34,6 @@ function printpath(path)
 } 
 
 // computes the distance of the path
-/*function path_dist(path)
-{
-    let dist = 0;
-    for(i = 0; i < path.length-1; i++){
-        let j = 0;
-        let k = 0;
-        while(path[i] != data[j].city){
-            j++;
-        }
-        while(path[i+1] != data[j].connectionWith[k].city){
-            k++;
-        }
-        dist = dist + data[j].connectionWith[k].dist;
-    }
-    return dist;
-} */
-
 function path_dist(path)
 {
     let dist = 0;

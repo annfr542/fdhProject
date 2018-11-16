@@ -1,15 +1,19 @@
 <!doctype html>
 
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="jquery-3.3.1.min.js"></script>
     <script src="script.js"></script>
     <script type="text/javascript" src="citiesData.json"></script>
 </head>
 
 <body>
+
+<header></header>
+
+<div id="main"> 
     <form action="test.php" method="POST">
-        <input type="text" id="InputFrom" placeholder="From...">
+        <input type="text" id="InputFrom" placeholder="From">
         <input type="text" id="InputTo" placeholder="To">
         <button type="button" onclick="printInput()">Search</button>
     </form>
@@ -17,6 +21,12 @@
     <p id="Print"></p>
     <p id="path"></p>
     <p id="dist"></p>
+</div>
+
+<footer>
+    <img src="footer.png" alt="Footer" width="100%" >
+</footer>
+   
 
 
 </body>
