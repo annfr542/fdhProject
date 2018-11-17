@@ -1,31 +1,77 @@
 
 body {
     margin: 0;
+    padding:0;
+    height:100%;
+    font-family: Arial, Helvetica, sans-serif;
 }
-
 header{
-    height: 5vw;
+    height: 60px;
     border-bottom: 0.5px solid gray;
-    margin-bottom: 5vw
+    margin-bottom: 5vh;
+   
+}
+.logo{
+    height: 60px;
+    padding-left: 5px;
+}
+.menu{
+    float: right;
+    margin: 0 4vw 0 0;
+    position: relative;
+    top: 30%;
+    display: block;
+
+    color: grey;
+    cursor: pointer;
+    text-decoration: none;
+    font: 400 20px Arial;
+}
+.menu:hover{
+    color: black;
 }
 
-#main {
-    height: 15vw;
-    margin:0 auto; 
+.container {
+    min-height:100vh;
+    position:relative;
+ }
+
+
+
+
+.main {
+    width: 100%;
+    margin: 0 auto; 
+    padding-bottom: 150px;
+    
 }
 
+.footer{
+    height: 150px;
+    position:absolute;
+    bottom:0;
+    width:100%;
+   
+}
+.footerImage{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
 
+/*Input form*/
 form{
-    width: 90%;
+    width: 50%;
     text-align: center;
-    margin:auto;
+    margin:15vh auto;
+
 }
 
 input{
     height: 40px;
-    width: 300px;
-    border-color: black;
+    width: 250px;
 }
+
 input[type=text] {
     padding: 12px 20px;
     margin: 8px 0;
@@ -37,8 +83,71 @@ input[type=text] {
     font-size: 14pt;
 
 }
-input[type=text]:focus {
+
+input[type=text]:focus,[type=time]:focus {
     border: 2px solid #555;
+}
+
+input[type=time] {
+    padding: 0 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 16pt;
+    color: grey;
+    width: 150px;
+
+}
+
+#toggle{
+    padding: 12px 12px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 14pt;
+    color: gray;
+}
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+    visibility: hidden;   
+    vertical-align: middle;
+}
+
+label {
+	cursor: pointer;
+	width: 60px;
+	height: 30px;
+	background: grey;
+	border-radius: 30px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 2.5px;
+	left: 3px;
+	width: 25px;
+	height: 25px;
+	background: #fff;
+	border-radius: 25px;
+	transition: 0.3s;
+}
+
+input:checked + label:after {
+	left: calc(100% - 3px);
+	transform: translateX(-100%);
+}
+
+#dep{
+    color: black;
 }
 
 button{
@@ -54,6 +163,60 @@ button{
     font-size: 14pt;
 
 }
+
 button:hover{
     background-color:  rgb(219, 6, 6);
 }
+
+
+/*info pages*/
+.info{
+    width: 60%;
+    margin: auto;
+}
+h1{
+    text-align: center;
+    font: 600 40px Arial;
+}
+p{
+    font: 400 16px Arial; 
+}
+
+/*original documents*/
+figure.zoom {
+    background-position: 50% 50%;
+    width: 500px;
+    overflow: hidden;
+    cursor: zoom-in;
+    margin:5vh auto;
+   
+  }
+
+  figure.zoom img:hover {
+    opacity: 0;
+  }
+
+  figure.zoom img {
+    transition: opacity 0.5s;
+    display: block;
+    width: 100%;
+  }
+
+  figure#zoom1 {
+    background-image: url("mapSmall.jpg");
+  }
+
+  figure#zoom2 {
+    background-image: url("timetableSmall.jpg");
+  }
+ 
+.images {
+    width: 60%;
+    margin:auto;
+}
+
+
+  
+ 
+   
+

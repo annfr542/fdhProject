@@ -1,6 +1,7 @@
 <!doctype html>
 
 <head>
+    <title>Go back to 1858</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="jquery-3.3.1.min.js"></script>
     <script src="script.js"></script>
@@ -8,26 +9,35 @@
 </head>
 
 <body>
+    
+    <div class="container">
+        <header>
+            <a href ="index.html"><img src="logo.png" class="logo" alt="Logo" ></a>
+            <a href="about.html" class="menu">About</a>
+            <a href="original.html" class="menu">Original document</a>
+            <a HREF="index.html" class="menu">Search</a>
+        </header>
 
-<header></header>
+        <div class="main"> 
+            <form action="test.php" method="POST">
+                <input type="text" id="InputFrom" placeholder="From">
+                <input type="text" id="InputTo" placeholder="To">
+                <input id="time" type="time" name="time" value="13:30"> 
+                <div id="toggle">
+                    <span id="dep">Dep</span>
+                    <input type="checkbox" id="switch" onclick="arrival()"><label for="switch"></label>
+                    <span id="ar">Ar</span> 
+                </div>
+                <button type="button" onclick="printInput()">Search</button>
+            </form>
 
-<div id="main"> 
-    <form action="test.php" method="POST">
-        <input type="text" id="InputFrom" placeholder="From">
-        <input type="text" id="InputTo" placeholder="To">
-        <button type="button" onclick="printInput()">Search</button>
-    </form>
+            <p id="Print"></p>
+            <p id="path"></p>
+            <p id="dist"></p>
+        </div>
 
-    <p id="Print"></p>
-    <p id="path"></p>
-    <p id="dist"></p>
-</div>
+        <div class="footer"> <img class="footerImage" src="footer1.jpg" alt="Footer"></div>
 
-<footer>
-    <img src="footer.png" alt="Footer" width="100%" >
-</footer>
-   
-
-
+    </div>
 </body>
 </html>

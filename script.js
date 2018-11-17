@@ -58,6 +58,25 @@ function printInput() {
     document.getElementById("path").innerHTML = printpath(path);
     document.getElementById("dist").innerHTML = dist;
 }
+
+function arrival(){
+// Get the checkbox
+  const checkBox = document.getElementById("switch");
+  // Get the output text
+  const dep = document.getElementById("dep");
+  const ar = document.getElementById("ar");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    ar.style.color = "black";
+    dep.style.color = "gray";
+  } else {
+    dep.style.color = "black";
+    ar.style.color = "gray";
+  }
+
+}
+
     
 
 
