@@ -20,9 +20,9 @@
 
         <div class="main"> 
             <form action="test.php" method="POST">
-                <input type="text" id="InputFrom" placeholder="From">
-                <input type="text" id="InputTo" placeholder="To">
-                <input id="time" type="time" name="time" value="13:30"> 
+                <input type="text" id="InputFrom" placeholder="From" autocomplete="off">
+                <input type="text" id="InputTo" placeholder="To" autocomplete="off">
+                <input type="time" id="time" name="time" placeholder="13:30" autocomplete="off"> 
                 <div id="toggle">
                     <span id="dep">Dep</span>
                     <input type="checkbox" id="switch" onclick="arrival()"><label for="switch"></label>
@@ -31,9 +31,13 @@
                 <button type="button" onclick="printInput()">Search</button>
             </form>
 
+            <p id="printtime"></p>
             <p id="Print"></p>
             <p id="path"></p>
             <p id="dist"></p>
+            
+
+
         </div>
 
         <div class="footer"> <img class="footerImage" src="footer1.jpg" alt="Footer"></div>
