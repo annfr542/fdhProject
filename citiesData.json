@@ -9,11 +9,11 @@
                         {
                             "dep":"20:40",
                             "arr":"05:39",
-                            "express":"True"
+                            "express": "True"
                         },
                         {   
                             "dep":"22:45",
-                            "arr":"01:08",
+                            "arr":"13:08",
                             "express":"False"
                         }
                     ],
@@ -29,15 +29,15 @@
                 "city":"paris",
                 "departures":
                     [
+                        {   
+                            "dep":"00:43",
+                            "arr":"16:05",
+                            "express":"False"
+                        },
                         {
                             "dep":"20:45",
                             "arr":"06:15",
                             "express":"True"
-                        },
-                        {   
-                            "dep":"00:43",
-                            "arr":"04:05",
-                            "express":"False"
                         }
                     ],
                 "cost":[49.40,37.05,27.15], 
@@ -45,7 +45,6 @@
             },
             {
                 "city":"bourg",
-                "express":"False",
                 "departures":
                     [
                         {
@@ -81,11 +80,6 @@
                 "city":"mâcon",
                 "departures":
                     [
-                        {
-                            "dep":"11:14",
-                            "arr":"12:23",
-                            "express":"False"
-                        },
                         {   
                             "dep":"06:46",
                             "arr":"07:50",
@@ -94,6 +88,11 @@
                         {   
                             "dep":"08:55",
                             "arr":"10:05",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"11:14",
+                            "arr":"12:23",
                             "express":"False"
                         },
                         {   
@@ -112,7 +111,7 @@
                         {
                             "dep":"06:58",
                             "arr":"07:30",
-                            "express":"True"
+                            "express":"False"
                         },
                         {   
                             "dep":"08:59",
@@ -137,7 +136,136 @@
     },
     {
 		"city": "pont-d'ain",
-		"connectionWith": []
+		"connectionWith": [
+            {
+                "city":"ambérieu",
+                "departures":
+                    [
+                        {   
+                            "dep":"07:30",
+                            "arr":"07:52",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"09:36",
+                            "arr":"10:00",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"17:11",
+                            "arr":"17:35",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"19:20",
+                            "arr":"19:44",
+                            "express":"False"
+                        }
+
+                    ],
+                "cost":[1.35, 1, 0.75], 
+                "dist": 12 
+            },
+            {
+                "city":"bourg",
+                "departures":
+                    [
+                        {
+                            "dep":"18:16",
+                            "arr":"18:46",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"22:41",
+                            "arr":"23:14",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[2.25, 1.7, 1.25], 
+                "dist": 20 
+            }
+
+        ]
+	},
+    {
+		"city": "ambérieu",
+		"connectionWith": [
+            {
+                "city":"culoz",
+                "departures":
+                    [
+                        {   
+                            "dep":"08:20",
+                            "arr":"09:35",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"10:25",
+                            "arr":"12:00",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"17:50",
+                            "arr":"19:25",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[5.6, 4.2, 3.1], 
+                "dist": 50
+            },
+            {
+                "city":"pont-d'ain",
+                "departures":
+                    [
+                        {
+                            "dep":"17:55",
+                            "arr":"18:16",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"22:20",
+                            "arr":"22:41",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[1.35, 1, 0.75], 
+                "dist":  12
+            },
+            {
+                "city":"lyon",
+                "departures":
+                    [
+                        {
+                            "dep":"08:05",
+                            "arr":"09:19",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"10:15",
+                            "arr":"11:29",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"14:20",
+                            "arr":"15:34",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"17:50",
+                            "arr":"18:58",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"19:50",
+                            "arr":"21:40",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[4.8, 3.6, 2.65], 
+                "dist":  43
+            }
+
+        ]
 	}
 
 ]
