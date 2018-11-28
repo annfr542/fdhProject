@@ -52,7 +52,7 @@ class Graph {
                 conc += j.city + " "; 
     
             // print the vertex and its adjacency list 
-            console.log(i + " -> " + conc); 
+            //console.log(i + " -> " + conc); 
         } 
     }  
     
@@ -105,12 +105,39 @@ class Graph {
         return 0 
     } 
 
+    // returns the cost of the trip between two cities for each class
+    getCost(v,w){
+        const key = v + w;
+        return this.connections.get(key).cost
+    }
+
     // calculate the distance between two cities
     getDistance(v,w){
         const key = v + w;
         return this.connections.get(key).dist;
     }
 
+    // returns all the schedules for a given path
+    getDepArr(v,w){
+        const key = v + w;
+        return this.connections.get(key).departures;
+    }
+
+    getSizedepartures(v,w,c1){
+        const key = v + w;
+        if(c1){
+            return this.connections.get(key).departures.length;
+        }
+        else{
+            let cnt = 0;
+            for(i=0;i<this.connections.get(key).departures.length;i++){
+                if(this.connections.get(key).departures[i].express == "False"){
+                    cnt++;
+                }
+            }
+            return cnt;
+        }
+    }
 } 
 
 
