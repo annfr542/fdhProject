@@ -36,14 +36,10 @@ header{
     position:relative;
  }
 
-
-
-
 .main {
     width: 100%;
     margin: 0 auto; 
     padding-bottom: 150px;
-    
 }
 
 .footer{
@@ -51,7 +47,6 @@ header{
     position:absolute;
     bottom:0;
     width:100%;
-   
 }
 .footerImage{
     width: 100%;
@@ -63,8 +58,7 @@ header{
 form{
     width: 50%;
     text-align: center;
-    margin:15vh auto;
-
+    margin:15vh auto 5vh auto;
 }
 
 input{
@@ -167,6 +161,45 @@ button{
 button:hover{
     background-color:  rgb(219, 6, 6);
 }
+/*Time table*/
+#result{
+    width: 60%;
+    margin: auto;
+    visibility: hidden;
+}
+#timetable{
+    width: 100%;
+    
+}
+h2{
+    text-align: center;
+}
+h3{
+    text-align: center;
+    font-size: 1em;
+    font-weight: 200;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid white;
+}
+.showmore{
+    text-align: center;
+    background-color: gray;
+    font-size: 1em;
+    cursor: pointer;
+}
+tbody{
+    background-color: rgb(216, 216, 216);
+}
+
+
 
 
 /*info pages*/

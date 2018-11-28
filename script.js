@@ -21,9 +21,6 @@ $.getJSON( "citiesData.json", function( data ) {
 
 let DepArrcheck = 1; //global variable for the depart/arrival box. 1 = dep, 0 = arr;
 
-
-// make sure we can use the graph library
-
 let inputFrom = "";
 let inputTo = "";
 let inputTime = "";
@@ -239,6 +236,12 @@ function printInput() {
     let fo = fullobject(path, t);
     console.log(fo);
 
+    document.getElementById("fromto").innerHTML = inputFrom + " to " + inputTo;
+
+    this.updateTimetable('10:00','12:00','2h','3');
+
+    document.getElementById("result").style.visibility = "visible";
+
     document.getElementById("Print").innerHTML = "From " + inputFrom + " to " + inputTo;
     document.getElementById("path").innerHTML = printpath(path);
     document.getElementById("dist").innerHTML = dist;
@@ -298,6 +301,62 @@ function printInput() {
     document.getElementById("printtime").innerHTML = str;
 }
 
+function updateTimetable(dep,arr,travelTime,changes){
+    // grab the old table
+    const tableRef = document.getElementById('result').getElementsByTagName('tbody')[0];
+
+    // create a new table
+    let table = document.createElement('tbody');
+    
+    // replace the old table with the new one
+    tableRef.parentNode.replaceChild(table, tableRef)
+
+    // Insert a row in the table 
+    let newRow   = table.insertRow(0);
+
+    // Insert the cells 
+    newRow.insertCell(0);
+    newRow.insertCell(1).appendChild(document.createTextNode(dep));
+    newRow.insertCell(2).appendChild(document.createTextNode(arr));
+    newRow.insertCell(3).appendChild(document.createTextNode(travelTime));
+    newRow.insertCell(4).appendChild(document.createTextNode(changes));
+
+    const moreInfo = newRow.insertCell(5);
+    moreInfo.className = "showmore";
+    moreInfo.onclick = printMoreInfo(moreInfo,0);
+    moreInfo.appendChild(document.createTextNode("+"));
+
+    let moreInfoRow = table.insertRow(1);
+    moreInfoRow.id = "moreInfoRow1";
+    moreInfoRow.style.visibility = 'collapse';
+    moreInfoRow.insertCell(0);
+    moreInfoRow.insertCell(1).appendChild(document.createTextNode(dep));
+    moreInfoRow.insertCell(2).appendChild(document.createTextNode(arr));
+    moreInfoRow.insertCell(3).appendChild(document.createTextNode(travelTime));
+    moreInfoRow.insertCell(4).appendChild(document.createTextNode(changes));
+
+
+}
+
+function printMoreInfo(moreInfo,id) {
+    return function() {
+        
+        if (moreInfo.childNodes[0].nodeValue == '+' )
+        {
+            moreInfo.childNodes[0].replaceWith(document.createTextNode("-"))
+            document.getElementById('moreInfoRow1').style.visibility = 'visible';
+        }
+        else
+        {
+            moreInfo.childNodes[0].replaceWith(document.createTextNode("+"))
+            document.getElementById('moreInfoRow1').style.visibility = 'collapse';
+        }
+    };
+    
+}
+
+
+
 function arrival(){
 // Get the checkbox
   const checkBox = document.getElementById("switch");
@@ -318,38 +377,7 @@ function arrival(){
 
 }
 
-// function chooseName(){
-//     var input, filter, ul, li, a, i;
-//     input = document.getElementById("inputFrom");
-//     filter = input.value.toUpperCase();
-//     ul= document.getElementById("myUL");
-//     li = ul.getElementsByTagName("li");
-//     for (i = 0; i < li.length;i++){
-//         a = li[i].getElementsByTagName("a")[0];
-//         if (a.innerHTML.toUpperCase().indexOf(filter) > -1){
-//             li[i].style.display = "";
-//         } else {
-//             li[i].style.display = "none";
-//         }
-//     }
 
-    // function chooseName2(){
-    //     var cities = [
-    //         'Paris',
-    //         'Maçon',
-    //         'Bourg',
-    //         'Pont-d\'Ain',
-    //     ];
-
-    //     var input = document.getElementById("inputFrom");
-        
-    //     var list = document.createElement("ul");
-	//     list.className = "suggestions";
-	//     list.style.display = "none";
-
-	//     form.appendChild(list);
-    // }
-    //}  
 
 
 
