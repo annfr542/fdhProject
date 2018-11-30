@@ -1,5 +1,3 @@
-
-
 // create a graph class 
 class Graph { 
     // defining vertex array and 
