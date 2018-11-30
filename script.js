@@ -102,7 +102,7 @@ function addEntryToTimetable(schedule,cost,dist,table,index){
 
     const dep = fullTable[0].dep;
     const arr = fullTable[fullTable.length - 1].arr;
-    const travelTime = arr-dep;
+    const travelTime = hoursFromMiliseconds(arr-dep);
     const changes = countChanges(fullTable);
 
     // Insert the cells for the main information
@@ -119,19 +119,17 @@ function addEntryToTimetable(schedule,cost,dist,table,index){
     newRow.onclick = showMoreInfo(showMore,index);
     showMore.appendChild(document.createTextNode("+"));
 
+    // Add more info header
     let moreInfoRow = table.insertRow(-1);
     moreInfoRow.className = "moreInfoRow" + index;
-    //moreInfoRow.className = "moreInfo" + index;
     moreInfoRow.classList.add("moreInfo");
     moreInfoRow.style.visibility = 'collapse';
     moreInfoRow.insertCell(0);
     const header = moreInfoRow.insertCell(1)
     header.appendChild(document.createTextNode("All stops"));
     header.style.fontWeight = 'bold';
-   
+    // Add rest of more info
     printMoreInfo(schedule,table,index);
-    
-   
 }
 
 function showMoreInfo(moreInfo,index) {
@@ -190,6 +188,8 @@ function addMoreInfoRow(table,index,city,time = ""){
     textCell.style.fontSize = '0.8rem';
     
 }
+
+// Help functions
 // to print only the time HH:mm from a date
 function datetoHHmm(date){
 
@@ -203,6 +203,13 @@ function datetoHHmm(date){
     }
     time = h + ":" + m;
     return time;
+}
+
+function hoursFromMiliseconds(time){
+    const minInMili = time % (1000*60*60);
+    const min = minInMili / (1000*60);
+    const hour = (time - minInMili )/ (1000*60*60);
+    return hour + "h " + min +"m";
 }
 
 

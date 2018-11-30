@@ -19,14 +19,14 @@ class Timetable {
 
         if (fo1[0].dep.getTime() == fo[0].dep.getTime() && fo1[fo1.length-1].arr.getTime() == fo[fo.length-1].arr.getTime()){ // same for all classes
             const arrivalNextDay = arrNextDay(fo1[0].dep,fo1[fo1.length-1].arr)
-            this.schedule.push({"changes": changes, "allowedClasses": '1,2,3', "arrivalNextDay": arrivalNextDay, "fullTable": fo1})
+            this.schedule.push({"changes": changes, "allowedClasses": 'All', "arrivalNextDay": arrivalNextDay, "fullTable": fo1})
         }
         else{
             const arrivalNextDay1 = arrNextDay(fo1[0].dep,fo1[fo1.length-1].arr)
-            this.schedule.push({"changes": changes, "allowedClasses": '1', "arrivalNextDay": arrivalNextDay1, "fullTable": fo1})
+            this.schedule.push({"changes": changes, "allowedClasses": 'First class only', "arrivalNextDay": arrivalNextDay1, "fullTable": fo1})
 
             const arrivalNextDay = arrNextDay(fo[0].dep,fo[fo.length-1].arr,)
-            this.schedule.push({"changes": changes, "allowedClasses": '1,2,3', "arrivalNextDay": arrivalNextDay, "fullTable": fo})
+            this.schedule.push({"changes": changes, "allowedClasses": 'All', "arrivalNextDay": arrivalNextDay, "fullTable": fo})
         }
     };
 
