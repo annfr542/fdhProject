@@ -18,7 +18,22 @@ $.getJSON( "citiesData.json", function( data ) {
     });
 });
 
-// Initialize timetable and inputs
+function whenDocumentLoaded(action) {
+	if (document.readyState === "loading") {
+		document.addEventListener("DOMContentLoaded", action);
+	} else {
+		// `DOMContentLoaded` already fired
+		action();
+	}
+}
+
+whenDocumentLoaded(() => {
+	// Initialize time
+    let today = new Date()
+    today.getDate();
+    document.getElementById('time').value = datetoHHmm(today);
+});
+
 let timeTable = {};
 $.getScript("timetable.js", function(){
     timeTable = new Timetable();
@@ -26,33 +41,30 @@ $.getScript("timetable.js", function(){
 let depOrArr = 1; //global variable for the depart/arrival box. 1 = dep, 0 = arr;
 let inputFrom = "";
 let inputTo = "";
-let inputTime = "";
+let inputime = "";
 
-function printpath(path) 
-{ 
-    let pathString = "";
-    for (i = 0; i < path.length; i++) {
-        pathString = pathString + " " + path[i];
-    } 
-    return pathString;
-} 
 
-// to print only the time HH:mm from a date
-function DatetoHHmm(date){
-
-    let h = date.getHours();
-    if(h<10){
-        h = "0"+h;
-    }
-    let m = date.getMinutes();
-    if(m<10){
-        m = "0"+m;
-    }
-    time = h + ":" + m;
-    return time;
+function arrival(){
+    // Get the checkbox
+        const checkBox = document.getElementById("switch");
+        // Get the output text
+        const dep = document.getElementById("dep");
+        const ar = document.getElementById("ar");
+    
+        // If the checkbox is checked, display the output text
+        if (checkBox.checked == true){
+            depOrArr = 0;
+            ar.style.color = "black";
+            dep.style.color = "gray";
+        } else {
+            depOrArr = 1;
+            dep.style.color = "black";
+            ar.style.color = "gray";
+        }
+    
 }
 
-function printInput() {
+function printResult() {
     inputFrom = document.getElementById("InputFrom").value;
     inputTo = document.getElementById("InputTo").value;
     // find path, distance, schedules
@@ -81,79 +93,117 @@ function updateTimetable(timeTable){
         addEntryToTimetable(timeTable.schedule[i],timeTable.cost,timeTable.dist,table,i);
     }
 
-   
-   
 }
 
 function addEntryToTimetable(schedule,cost,dist,table,index){
     // Insert a row in the table 
     let newRow   = table.insertRow(-1);
+    const fullTable = schedule.fullTable;
 
-    const dep = schedule.fullTable[0].dep;
-    const arr = schedule.fullTable[schedule.fullTable.length - 1].arr;
+    const dep = fullTable[0].dep;
+    const arr = fullTable[fullTable.length - 1].arr;
     const travelTime = arr-dep;
-    const changes = countChanges(schedule.fullTable);
+    const changes = countChanges(fullTable);
 
     // Insert the cells for the main information
     newRow.insertCell(0);
-    newRow.insertCell(1).appendChild(document.createTextNode(this.DatetoHHmm(dep)));
-    newRow.insertCell(2).appendChild(document.createTextNode(this.DatetoHHmm(arr)));
+    newRow.insertCell(1).appendChild(document.createTextNode(datetoHHmm(dep)));
+    const arrival = schedule.arrivalNextDay ? datetoHHmm(arr) + " +1day" : datetoHHmm(arr);
+    newRow.insertCell(2).appendChild(document.createTextNode(arrival));
     newRow.insertCell(3).appendChild(document.createTextNode(travelTime));
     newRow.insertCell(4).appendChild(document.createTextNode(changes));
     newRow.insertCell(5).appendChild(document.createTextNode(schedule.allowedClasses));
 
     const showMore = newRow.insertCell(6);
     showMore.className = "showmore";
-    showMore.onclick = printMoreInfo(showMore,index);
+    newRow.onclick = showMoreInfo(showMore,index);
     showMore.appendChild(document.createTextNode("+"));
 
     let moreInfoRow = table.insertRow(-1);
-    moreInfoRow.id = "moreInfoRow" + index;
+    moreInfoRow.className = "moreInfoRow" + index;
+    //moreInfoRow.className = "moreInfo" + index;
+    moreInfoRow.classList.add("moreInfo");
     moreInfoRow.style.visibility = 'collapse';
     moreInfoRow.insertCell(0);
-    moreInfoRow.insertCell(1).appendChild(document.createTextNode(dep));
-    moreInfoRow.insertCell(2).appendChild(document.createTextNode(arr));
-    moreInfoRow.insertCell(3).appendChild(document.createTextNode(travelTime));
-    moreInfoRow.insertCell(4).appendChild(document.createTextNode(changes));
+    const header = moreInfoRow.insertCell(1)
+    header.appendChild(document.createTextNode("All stops"));
+    header.style.fontWeight = 'bold';
+   
+    printMoreInfo(schedule,table,index);
+    
+   
 }
 
-function printMoreInfo(moreInfo,index) {
+function showMoreInfo(moreInfo,index) {
     return function() {
-        
+        let info = document.getElementsByClassName('moreInfoRow' + index);
         if (moreInfo.childNodes[0].nodeValue == '+' )
         {
             moreInfo.childNodes[0].replaceWith(document.createTextNode("-"))
-            document.getElementById('moreInfoRow' + index).style.visibility = 'visible';
+            Array.from(info).forEach(element => {
+                element.style.visibility = 'visible';
+            }); 
         }
         else
         {
             moreInfo.childNodes[0].replaceWith(document.createTextNode("+"))
-            document.getElementById('moreInfoRow' + index).style.visibility = 'collapse';
+            Array.from(info).forEach(element => {
+                element.style.visibility = 'collapse';
+            });
         }
     };
 }
 
 
-function arrival(){
-// Get the checkbox
-    const checkBox = document.getElementById("switch");
-    // Get the output text
-    const dep = document.getElementById("dep");
-    const ar = document.getElementById("ar");
-
-    // If the checkbox is checked, display the output text
-    if (checkBox.checked == true){
-        depOrArr = 0;
-        ar.style.color = "black";
-        dep.style.color = "gray";
-    } else {
-        depOrArr = 1;
-        dep.style.color = "black";
-        ar.style.color = "gray";
-    }
+function printMoreInfo(schedule,table,index){
+    fullTable = schedule.fullTable;
+    const dep = {"city":fullTable[0].city, "departure": datetoHHmm(fullTable[0].dep)};
+    const arr = {"city":fullTable[fullTable.length - 1].city, "arrival": datetoHHmm(fullTable[fullTable.length - 1].arr)};
+    addMoreInfoRow(table,index,dep.city,dep.departure);
+    fullTable.pop();
+    fullTable.shift();
+    for (row of fullTable) {
+        if(row.change)
+        {
+            addMoreInfoRow(table,index, row.city, datetoHHmm(row.arr))
+            addMoreInfoRow(table,index, "-")
+            addMoreInfoRow(table,index, row.city, datetoHHmm(row.dep))
+        }
+        else{
+            addMoreInfoRow(table,index,row.city,datetoHHmm(row.dep))
+        }
+    } 
+    addMoreInfoRow(table,index,arr.city, arr.arrival);
 
 }
+function addMoreInfoRow(table,index,city,time = ""){
+    let moreInfoRow = table.insertRow(-1);
+    moreInfoRow.className = "moreInfoRow" + index;
+    //moreInfoRow.className = "moreInfo" + index;
+    moreInfoRow.classList.add("moreInfo");
+    moreInfoRow.style.visibility = 'collapse';
+    moreInfoRow.insertCell(0);
+    let textCell = moreInfoRow.insertCell(1);
+    textCell.appendChild(document.createTextNode(time + " " + city));
+    textCell.style.padding = '0 0 0 10px';
+    textCell.style.fontStyle = 'italic';
+    textCell.style.fontSize = '0.8rem';
+    
+}
+// to print only the time HH:mm from a date
+function datetoHHmm(date){
 
+    let h = date.getHours();
+    if(h<10){
+        h = "0"+h;
+    }
+    let m = date.getMinutes();
+    if(m<10){
+        m = "0"+m;
+    }
+    time = h + ":" + m;
+    return time;
+}
 
 
 

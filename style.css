@@ -80,10 +80,11 @@ input[type=text] {
 
 input[type=text]:focus,[type=time]:focus {
     border: 2px solid #555;
+   
 }
 
 input[type=time] {
-    padding: 0 20px;
+    padding: 0 0 0 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -92,8 +93,7 @@ input[type=time] {
     outline: none;
     font-size: 16pt;
     color: grey;
-    width: 150px;
-
+    width: 120px;
 }
 
 #toggle{
@@ -197,6 +197,9 @@ th, td {
 }
 tbody{
     background-color: rgb(216, 216, 216);
+}
+.moreInfo {
+    background-color: white;
 }
 
 
