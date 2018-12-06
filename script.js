@@ -211,8 +211,3 @@ function hoursFromMiliseconds(time){
     const hour = (time - minInMili )/ (1000*60*60);
     return hour + "h " + min +"m";
 }
-
-
-
-
-

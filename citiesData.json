@@ -17,7 +17,7 @@
                             "express":"False"
                         }
                     ],
-                "cost":[49.40,37.05,27.15], 
+                "cost":[49.40, 37.05, 27.15], 
                 "dist": 441 
             }
         ]
@@ -40,7 +40,7 @@
                             "express":"True"
                         }
                     ],
-                "cost":[49.40,37.05,27.15], 
+                "cost":[49.40, 37.05, 27.15], 
                 "dist": 441 
             },
             {
@@ -68,7 +68,7 @@
                             "express":"False"
                         }
                     ],
-                "cost":[4.25,3.2,2.35], 
+                "cost":[4.25, 3.20, 2.35], 
                 "dist": 38 
             }
         ]
@@ -101,7 +101,7 @@
                             "express":"False"
                         }
                     ],
-                "cost":[4.25,3.2,2.35], 
+                "cost":[4.25, 3.20, 2.35], 
                 "dist": 38  
             },
             {
@@ -129,7 +129,7 @@
                             "express":"False"
                         }
                     ],
-                "cost":[2.15,1.6,1.15], 
+                "cost":[2.15, 1.60, 1.15], 
                 "dist": 19 
             }
         ]
@@ -163,7 +163,7 @@
                         }
 
                     ],
-                "cost":[1.35, 1, 0.75], 
+                "cost":[1.35, 1.00, 0.75], 
                 "dist": 12 
             },
             {
@@ -181,10 +181,9 @@
                             "express":"False"
                         }
                     ],
-                "cost":[2.25, 1.7, 1.25], 
+                "cost":[2.25, 1.70, 1.25], 
                 "dist": 20 
             }
-
         ]
 	},
     {
@@ -210,7 +209,7 @@
                             "express":"False"
                         }
                     ],
-                "cost":[5.6, 4.2, 3.1], 
+                "cost":[5.60, 4.20, 3.10], 
                 "dist": 50
             },
             {
@@ -228,7 +227,7 @@
                             "express":"False"
                         }
                     ],
-                "cost":[1.35, 1, 0.75], 
+                "cost":[1.35, 1.00, 0.75], 
                 "dist":  12
             },
             {
@@ -261,11 +260,998 @@
                             "express":"False"
                         }
                     ],
-                "cost":[4.8, 3.6, 2.65], 
+                "cost":[4.80, 3.60, 2.65], 
                 "dist":  43
             }
-
         ]
-	}
-
+    },
+    {
+		"city": "lyon",
+		"connectionWith": [
+            {
+                "city":"ambérieu",
+                "departures":
+                    [
+                        {   
+                            "dep":"06:38",
+                            "arr":"07:48",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"08:58",
+                            "arr":"10:13",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"11:38",
+                            "arr":"12:53",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"16:18",
+                            "arr":"17:33",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"18:38",
+                            "arr":"19:53",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[4.80, 3.60, 2.65], 
+                "dist": 43
+            },
+            {
+                "city":"avignon",
+                "departures":
+                    [
+                        {   
+                            "dep":"10:20",
+                            "arr":"18:24",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"20:00",
+                            "arr":"03:05",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"22:30",
+                            "arr":"03:35",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[25.75, 19.30, 14.15], 
+                "dist": 232
+            }
+        ]
+    },
+    {
+		"city": "avignon",
+		"connectionWith": [
+            {
+                "city":"lyon",
+                "departures":
+                    [
+                        {   
+                            "dep":"13:27",
+                            "arr":"19:00",
+                            "express":"True"
+                        },
+                        {
+                            "dep":"13:57",
+                            "arr":"21:25",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[25.75, 19.30, 14.15], 
+                "dist": 232
+            },
+            {
+                "city":"marseille",
+                "departures":
+                    [
+                        {
+                            "dep":"03:40",
+                            "arr":"06:35",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"04:00",
+                            "arr":"08:06",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"18:44",
+                            "arr":"22:17",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[13.45, 10.10, 7.40], 
+                "dist": 120
+            }
+        ]
+    },
+    {
+		"city": "marseille",
+		"connectionWith": [
+            {
+                "city":"avignon",
+                "departures":
+                    [
+                        {
+                            "dep":"10:30",
+                            "arr":"13:22",
+                            "express":"True"
+                        },
+                        {   
+                            "dep":"09:15",
+                            "arr":"13:47",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[13.45, 10.10, 7.40], 
+                "dist": 120
+            }
+        ]
+	},
+    {
+		"city": "culoz",
+		"connectionWith": [
+            {
+                "city":"ambérieu",
+                "departures":
+                    [
+                        {
+                            "dep":"08:25",
+                            "arr":"10:05",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"12:25",
+                            "arr":"14:05",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"16:10",
+                            "arr":"17:41",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[5.60, 4.20, 3.05], 
+                "dist": 50
+            },
+            {
+                "city":"aix-les-bains",
+                "departures":
+                    [
+                        {
+                            "dep":"10:35",
+                            "arr":"11:51",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"20:25",
+                            "arr":"21:47",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[2.40, 1.80, 1.20], 
+                "dist": 20
+            },
+            {
+                "city":"bellegarde",
+                "departures":
+                    [
+                        {
+                            "dep":"09:35",
+                            "arr":"10:36",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"12:00",
+                            "arr":"13:10",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"19:25",
+                            "arr":"20:26",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[3.65, 2.75, 2.00], 
+                "dist": 33
+            }
+        ]
+    },
+    {
+		"city": "aix-les-bains",
+		"connectionWith": [
+            {
+                "city":"culoz",
+                "departures":
+                    [
+                        {
+                            "dep":"07:02",
+                            "arr":"08:00",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"10:15",
+                            "arr":"11:30",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"15:05",
+                            "arr":"16:00",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[2.40, 1.80, 1.20], 
+                "dist": 20
+            },
+            {
+                "city":"chambéry",
+                "departures":
+                    [
+                        {
+                            "dep":"11:51",
+                            "arr":"12:21",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"21:45",
+                            "arr":"22:25",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[1.20, 0.90, 0.60], 
+                "dist": 16
+            }
+        ]
+	},
+    {
+		"city": "chambéry",
+		"connectionWith": [
+            {
+                "city":"aix-les-bains",
+                "departures":
+                    [
+                        {
+                            "dep":"06:30",
+                            "arr":"07:02",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"09:22",
+                            "arr":"10:15",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"14:29",
+                            "arr":"15:05",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[1.20, 0.90, 0.60], 
+                "dist": 16
+            },
+            {
+                "city":"saint-jean-de-maurienne",
+                "departures":
+                    [
+                        {
+                            "dep":"12:21",
+                            "arr":"14:35",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[7.00, 5.25, 3.50], 
+                "dist": 70
+            }
+        ]
+    },
+    {
+		"city": "saint-jean-de-maurienne",
+		"connectionWith": [
+            {
+                "city":"chambéry",
+                "departures":
+                    [
+                        {
+                            "dep":"06:35",
+                            "arr":"09:22",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"12:30",
+                            "arr":"14:29",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[7.00, 5.25, 3.50], 
+                "dist": 70
+            },
+            {
+                "city":"turin",
+                "departures":
+                    [
+                        {
+                            "dep":"14:35",
+                            "arr":"19:45",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[30.35, 28.75, 26.50], 
+                "dist": 143
+            }
+        ]
+	},
+    {
+		"city": "turin",
+		"connectionWith": [
+            {
+                "city":"saint-jean-de-maurienne",
+                "departures":
+                    [
+                        {
+                            "dep":"09:30",
+                            "arr":"12:30",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[30.35, 28.75, 26.50], 
+                "dist": 143
+            },
+            {
+                "city":"milan",
+                "departures":
+                    [
+                        {
+                            "dep":"20:05",
+                            "arr":"02:30",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[16.00, 12.05, 8.50], 
+                "dist": 147
+            }
+        ]
+    },
+    {
+		"city": "milan",
+		"connectionWith": [
+            {
+                "city":"turin",
+                "departures":
+                    [
+                        {
+                            "dep":"02:50",
+                            "arr":"09:15",
+                            "express": "False"
+                        }
+                    ],
+                "cost":[16.00, 12.05, 8.50], 
+                "dist": 147
+            }
+        ]
+    },
+    {
+        "city": "bellegarde",
+        "connectionWith": [
+            {
+                "city":"collonges",
+                "departures":
+                    [
+                        {
+                            "dep":"13:01",
+                            "arr":"13:29",
+                            "express": "False"
+                        },
+                        {
+                            "dep":"17:42",
+                            "arr":"18:29",
+                            "express": "False"
+                        },
+                        {
+                            "dep":"20:26",
+                            "arr":"20:54",
+                            "express": "False"
+                        }
+                    ],
+                "cost":[1.25, 0.90, 0.70], 
+                "dist": 11
+            },
+            {
+                "city":"la plaine",
+                "departures":
+                    [
+                        {
+                            "dep":"10:36",
+                            "arr":"11:17",
+                            "express": "False"
+                        }
+                    ],
+                "cost":[2.15, 1.60, 1.20], 
+                "dist": 19
+            },
+            {
+                "city":"culoz",
+                "departures":
+                    [
+                        {
+                            "dep":"07:08",
+                            "arr":"08:25",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"11:08",
+                            "arr":"12:25",
+                            "express":"False"
+                        },
+                        {   
+                            "dep":"15:01",
+                            "arr":"16:10",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[3.70, 2.80, 2.05], 
+                "dist": 33
+            }
+        ]
+    },
+    {
+		"city": "collonges",
+		"connectionWith": [
+            {
+                "city":"bellegarde",
+                "departures":
+                    [
+                        {
+                            "dep":"06:49",
+                            "arr":"07:08",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"10:49",
+                            "arr":"11:08",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"14:44",
+                            "arr":"15:01",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[1.20, 0.90, 0.70], 
+                "dist": 11
+            },
+            {
+                "city":"chancy",
+                "departures":
+                    [
+                        {
+                            "dep":"13:29",
+                            "arr":"13:37",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"18:29",
+                            "arr":"18:41",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"20:54",
+                            "arr":"21:02",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[0.35, 0.25, 0.15], 
+                "dist": 3
+            }
+        ]
+    },
+    {
+		"city": "chancy",
+		"connectionWith": [
+            {
+                "city":"collonges",
+                "departures":
+                    [
+                        {
+                            "dep":"06:41",
+                            "arr":"06:49",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"10:41",
+                            "arr":"10:49",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"14:37",
+                            "arr":"14:44",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[0.35, 0.25, 0.15], 
+                "dist": 3
+            },
+            {
+                "city":"la plaine",
+                "departures":
+                    [
+                        {
+                            "dep":"13:37",
+                            "arr":"13:48",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"18:41",
+                            "arr":"18:58",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"21:02",
+                            "arr":"21:13",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[0.55, 0.45, 0.35], 
+                "dist": 5
+            }
+        ]
+    },
+    {
+		"city": "la plaine",
+		"connectionWith": [
+            {
+                "city":"chancy",
+                "departures":
+                    [
+                        {
+                            "dep":"06:30",
+                            "arr":"06:41",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"10:30",
+                            "arr":"10:41",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"14:27",
+                            "arr":"14:37",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[0.55, 0.45, 0.35], 
+                "dist": 5
+            },
+            {
+                "city":"satigny",
+                "departures":
+                    [
+                        {
+                            "dep":"11:17",
+                            "arr":"11:28",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"13:48",
+                            "arr":"13:59",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"18:58",
+                            "arr":"19:16",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"21:13",
+                            "arr":"21:24",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[0.55, 0.40, 0.30], 
+                "dist": 5
+            }
+        ]
+    },
+    {
+		"city": "satigny",
+		"connectionWith": [
+            {
+                "city":"la plaine",
+                "departures":
+                    [
+                        {
+                            "dep":"06:19",
+                            "arr":"06:30",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"10:19",
+                            "arr":"10:30",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"14:17",
+                            "arr":"14:27",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[0.60, 0.40, 0.30], 
+                "dist": 5
+            },
+            {
+                "city":"meyrin",
+                "departures":
+                    [
+                        {
+                            "dep":"11:28",
+                            "arr":"11:37",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"13:59",
+                            "arr":"14:08",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"19:16",
+                            "arr":"19:32",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"21:24",
+                            "arr":"21:33",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[0.45, 0.35, 0.25], 
+                "dist": 4
+            }
+        ]
+    },
+    {
+		"city": "meyrin",
+		"connectionWith": [
+            {
+                "city":"satigny",
+                "departures":
+                    [
+                        {
+                            "dep":"06:10",
+                            "arr":"06:19",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"10:10",
+                            "arr":"10:19",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"14:09",
+                            "arr":"14:17",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[0.45, 0.35, 0.25], 
+                "dist": 4
+            },
+            {
+                "city":"genève",
+                "departures":
+                    [
+                        {
+                            "dep":"11:37",
+                            "arr":"11:48",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"14:08",
+                            "arr":"14:20",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"19:32",
+                            "arr":"19:50",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"21:33",
+                            "arr":"21:45",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[0.65, 0.50, 0.35], 
+                "dist": 6
+            }
+        ]
+    },
+    {
+		"city": "genève",
+		"connectionWith": [
+            {
+                "city":"meyrin",
+                "departures":
+                    [
+                        {
+                            "dep":"06:00",
+                            "arr":"06:10",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"10:00",
+                            "arr":"10:10",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"14:00",
+                            "arr":"14:09",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[0.65, 0.50, 0.35], 
+                "dist": 6
+            },
+            {
+                "city":"chambésy",
+                "departures":
+                    [
+                        {
+                            "dep":"14:00",
+                            "arr":"14:08",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"17:30",
+                            "arr":"17:38",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[0.60, 0.40, 0.30], 
+                "dist": 4
+            }
+        ]
+    },
+    {
+        "city": "chambésy",
+		"connectionWith": [
+            {
+                "city":"genthod",
+                "departures":
+                    [
+                        {
+                            "dep":"14:08",
+                            "arr":"14:14",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"17:38",
+                            "arr":"17:44",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[0.10, 0.10, 0.05], 
+                "dist": 2
+            }
+        ]
+    },
+    {
+        "city": "genthod",
+		"connectionWith": [
+            {
+                "city":"versoix",
+                "departures":
+                    [
+                        {
+                            "dep":"14:14",
+                            "arr":"14:21",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"17:44",
+                            "arr":"17:51",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[0.20, 0.20, 0.10], 
+                "dist": 2
+            }
+        ]
+    },
+    {
+        "city": "versoix",
+		"connectionWith": [
+            {
+                "city":"coppet",
+                "departures":
+                    [
+                        {
+                            "dep":"14:21",
+                            "arr":"14:35",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"17:51",
+                            "arr":"18:05",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[0.20, 0.20, 0.10], 
+                "dist": 5
+            }
+        ]
+    },
+    {
+        "city": "coppet",
+		"connectionWith": [
+            {
+                "city":"céligny",
+                "departures":
+                    [
+                        {
+                            "dep":"14:35",
+                            "arr":"14:42",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"18:05",
+                            "arr":"18:12",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[0.25, 0.20, 0.15], 
+                "dist": 4
+            }
+        ]
+    },
+    {
+        "city": "céligny",
+		"connectionWith": [
+            {
+                "city":"nyon",
+                "departures":
+                    [
+                        {
+                            "dep":"14:42",
+                            "arr":"14:52",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"18:12",
+                            "arr":"18:22",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[0.40, 0.30, 0.20], 
+                "dist": 5
+            }
+        ]
+    },
+    {
+        "city": "nyon",
+		"connectionWith": [
+            {
+                "city":"rolle",
+                "departures":
+                    [
+                        {
+                            "dep":"14:52",
+                            "arr":"15:13",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"18:22",
+                            "arr":"18:43",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[0.95, 0.75, 0.45], 
+                "dist": 12
+            }
+        ]
+    },
+    {
+        "city": "rolle",
+		"connectionWith": [
+            {
+                "city":"morges",
+                "departures":
+                    [
+                        {
+                            "dep":"15:13",
+                            "arr":"15:39",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"18:43",
+                            "arr":"19:09",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[1.15, 0.85, 0.55], 
+                "dist": 14
+            }
+        ]
+    },
+    {
+        "city": "morges",
+		"connectionWith": [
+            {
+                "city":"lausanne",
+                "departures":
+                    [
+                        {
+                            "dep":"15:39",
+                            "arr":"15:58",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"19:09",
+                            "arr":"19:31",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[1.05, 0.75, 0.55], 
+                "dist": 13
+            }
+        ]
+    },
+    {
+        "city": "lausanne",
+		"connectionWith": [
+            {
+                "city":"yverdon",
+                "departures":
+                    [
+                        {
+                            "dep":"15:58",
+                            "arr":"17:10",
+                            "express":"False"
+                        },
+                        {
+                            "dep":"19:31",
+                            "arr":"20:46",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[4.05, 2.65, 2.00], 
+                "dist": 25
+            },
+            {
+                "city":"genève",
+                "departures":
+                    [
+                        {
+                            "dep":"11:31",
+                            "arr":"13:45",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[4.90, 3.65, 2.45], 
+                "dist": 61
+            }
+        ]
+    },
+    {
+        "city": "yverdon",
+		"connectionWith": [
+            {
+                "city":"lausanne",
+                "departures":
+                    [
+                        {
+                            "dep":"10:30",
+                            "arr":"11:34",
+                            "express":"False"
+                        }
+                    ],
+                "cost":[4.05, 2.65, 2.00], 
+                "dist": 25
+            }
+        ]
+    }
 ]
