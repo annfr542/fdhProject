@@ -15,18 +15,19 @@ class Graph {
     { 
     // initialize the adjacent list with a 
     // null array 
-    this.AdjList.set(v, []); 
+    this.AdjList.set(v.toLowerCase(), []); 
     }  
     
     // add edge to the graph 
     addEdge(v, w) 
     { 
+
         // get the list for vertex v and put the 
         // vertex w denoting edge betweeen v and w 
-        this.AdjList.get(v).push(w.city); 
+        this.AdjList.get(v.toLowerCase()).push(w.city.toLowerCase()); 
                 
         const connction = {"departures": w.departures, "cost": w.cost, "dist": w.dist};
-        const key = v + w.city
+        const key = v.toLowerCase() + w.city.toLowerCase();
         this.connections.set(key, connction);
     } 
 
@@ -58,6 +59,9 @@ class Graph {
     // from source to destination 
     findpath(src, dst) 
     { 
+        if (!this.AdjList.get(src) || !this.AdjList.get(dst)){
+            return null;
+        }
         // create a visited array 
         let visited = []; 
         for (let i = 0; i < this.noOfVertices; i++) 

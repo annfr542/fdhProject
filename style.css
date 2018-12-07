@@ -173,6 +173,10 @@ button:hover{
     width: 100%;
     
 }
+#error{
+    color: red;
+    font-style: italic;
+}
 h2{
     text-align: center;
 }

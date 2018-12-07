@@ -7,7 +7,7 @@ $.getJSON( "citiesData.json", function( data ) {
         // Add all nodes
         for (i = 0; i < data.length; i++) { 
             Cities.push(data[i].city);
-            graph.addVertex(data[i].city.toLowerCase());
+            graph.addVertex(data[i].city);
         }
 
         // Add all edges
@@ -34,8 +34,6 @@ whenDocumentLoaded(() => {
     let today = new Date()
     today.getDate();
     document.getElementById('time').value = datetoHHmm(today);
-    /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
-    // autocomplete(document.getElementById('InputFrom'), countries);
 });
 
 let timeTable = {};
@@ -69,17 +67,25 @@ function arrival(){
 }
 
 function printResult() {
-    inputFrom = document.getElementById("InputFrom").value;
-    inputTo = document.getElementById("InputTo").value;
+    inputFrom = document.getElementById("InputFrom").value.toLowerCase();
+    inputTo = document.getElementById("InputTo").value.toLowerCase();
     // find path, distance, schedules
     let path = graph.findpath(inputFrom, inputTo);
-    
+
+    if(!path){
+        document.getElementById("errorMessage").style.visibility = "visible"; 
+        document.getElementById("result").style.visibility = "hidden"; 
+        document.getElementById("error").innerHTML = "Couldn't find a route between " + firstToUpper(inputFrom) 
+        + " and " + firstToUpper(inputTo);
+        return;
+    }
+
+    document.getElementById("fromto").innerHTML = firstToUpper(inputFrom) + " to " + firstToUpper(inputTo);
     
     timeTable.createTimetable(path,depOrArr);
     updateTimetable(timeTable);
-
-    document.getElementById("fromto").innerHTML = inputFrom + " to " + inputTo;
-    document.getElementById("result").style.visibility = "visible";      
+    document.getElementById("result").style.visibility = "visible"; 
+    document.getElementById("errorMessage").style.visibility = "hidden";      
 }
 
 function updateTimetable(timeTable){
@@ -184,14 +190,14 @@ function printPrices(costs,firstClassOnly,moreInfoRow){
     if(firstClassOnly){
         let option = document.createElement("option");
             option.value = costs[0];
-            option.text = classes[0] +" " + costs[0] + "chf";
+            option.text = classes[0] +" " + costs[0].toFixed(1) + "CHF";
             prices.appendChild(option);
     }else{
         //Create and append the options
         for (i  in costs) {
             let option = document.createElement("option");
             option.value = costs[i];
-            option.text = classes[i] + " " + costs[i] + "chf";
+            option.text = classes[i] + " " + costs[i].toFixed(1) + "CHF";
             prices.appendChild(option);
         }
     }
@@ -204,21 +210,21 @@ function printFullTimetable(schedule,table,index){
     fullTable = schedule.fullTable;
     const dep = {"city":fullTable[0].city, "departure": datetoHHmm(fullTable[0].dep)};
     const arr = {"city":fullTable[fullTable.length - 1].city, "arrival": datetoHHmm(fullTable[fullTable.length - 1].arr)};
-    addMoreInfoRow(table,index,dep.city,dep.departure);
+    addMoreInfoRow(table,index,firstToUpper(dep.city),dep.departure);
     fullTable.pop();
     fullTable.shift();
     for (row of fullTable) {
         if(row.change)
         {
-            addMoreInfoRow(table,index, row.city, datetoHHmm(row.arr))
+            addMoreInfoRow(table,index, firstToUpper(row.city), datetoHHmm(row.arr))
             addMoreInfoRow(table,index, "-")
-            addMoreInfoRow(table,index, row.city, datetoHHmm(row.dep))
+            addMoreInfoRow(table,index, firstToUpper(row.city), datetoHHmm(row.dep))
         }
         else{
-            addMoreInfoRow(table,index,row.city,datetoHHmm(row.dep))
+            addMoreInfoRow(table,index,firstToUpper(row.city),datetoHHmm(row.dep))
         }
     } 
-    addMoreInfoRow(table,index,arr.city, arr.arrival);
+    addMoreInfoRow(table,index,firstToUpper(arr.city), arr.arrival);
 
 }
 
@@ -267,6 +273,11 @@ $( function() {
         source: Cities
       });
 });
+
+function firstToUpper(string) 
+{
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 
 
