@@ -1,11 +1,13 @@
 // create a graph
 let graph;
+let Cities = [];
 $.getJSON( "citiesData.json", function( data ) {
     $.getScript("graph.js", function() {
         graph = new Graph(data.length);
         // Add all nodes
         for (i = 0; i < data.length; i++) { 
-            graph.addVertex(data[i].city);
+            Cities.push(data[i].city);
+            graph.addVertex(data[i].city.toLowerCase());
         }
 
         // Add all edges
@@ -32,6 +34,8 @@ whenDocumentLoaded(() => {
     let today = new Date()
     today.getDate();
     document.getElementById('time').value = datetoHHmm(today);
+    /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+    // autocomplete(document.getElementById('InputFrom'), countries);
 });
 
 let timeTable = {};
@@ -90,12 +94,12 @@ function updateTimetable(timeTable){
 
     for (i in timeTable.schedule)
     {
-        addEntryToTimetable(timeTable.schedule[i],timeTable.cost,timeTable.dist,table,i);
+        addEntryToTimetable(timeTable.schedule[i],timeTable.cost,timeTable.distance,table,i);
     }
 
 }
 
-function addEntryToTimetable(schedule,cost,dist,table,index){
+function addEntryToTimetable(schedule,costs,dist,table,index){
     // Insert a row in the table 
     let newRow   = table.insertRow(-1);
     const fullTable = schedule.fullTable;
@@ -108,11 +112,12 @@ function addEntryToTimetable(schedule,cost,dist,table,index){
     // Insert the cells for the main information
     newRow.insertCell(0);
     newRow.insertCell(1).appendChild(document.createTextNode(datetoHHmm(dep)));
-    const arrival = schedule.arrivalNextDay ? datetoHHmm(arr) + " +1day" : datetoHHmm(arr);
+    const arrival = schedule.nrOfDays > 0 ? datetoHHmm(arr) + " +" + schedule.nrOfDays +"day" : datetoHHmm(arr);
     newRow.insertCell(2).appendChild(document.createTextNode(arrival));
     newRow.insertCell(3).appendChild(document.createTextNode(travelTime));
     newRow.insertCell(4).appendChild(document.createTextNode(changes));
-    newRow.insertCell(5).appendChild(document.createTextNode(schedule.allowedClasses));
+    const classes = schedule.firstClassOnly ? "First class only" : "All";
+    newRow.insertCell(5).appendChild(document.createTextNode(classes));
 
     const showMore = newRow.insertCell(6);
     showMore.className = "showmore";
@@ -125,11 +130,24 @@ function addEntryToTimetable(schedule,cost,dist,table,index){
     moreInfoRow.classList.add("moreInfo");
     moreInfoRow.style.visibility = 'collapse';
     moreInfoRow.insertCell(0);
-    const header = moreInfoRow.insertCell(1)
-    header.appendChild(document.createTextNode("All stops"));
-    header.style.fontWeight = 'bold';
+
+    // add header for all stops
+    const allStops = moreInfoRow.insertCell(1)
+    allStops.appendChild(document.createTextNode("All stops"));
+    allStops.style.fontWeight = 'bold';
+
+    // Add prices 
+    printPrices(costs,schedule.firstClassOnly,moreInfoRow);
+    
+    // Add distance
+    const distCell = moreInfoRow.insertCell(-1)
+    distCell.appendChild(document.createTextNode("Distance: " + dist + "km"));
+    distCell.style.fontSize ='0.9rem';
+    distCell.colSpan = '2';
+
+
     // Add rest of more info
-    printMoreInfo(schedule,table,index);
+    printFullTimetable(schedule,table,index);
 }
 
 function showMoreInfo(moreInfo,index) {
@@ -152,8 +170,37 @@ function showMoreInfo(moreInfo,index) {
     };
 }
 
+function printPrices(costs,firstClassOnly,moreInfoRow){
+    const classes = ["1st", "2nd", "3d"];
 
-function printMoreInfo(schedule,table,index){
+    // create a new cell and append label
+    const priceCell = moreInfoRow.insertCell(-1)
+    priceCell.appendChild(document.createTextNode("Price "));
+
+
+    // create drop down list
+    let prices = document.createElement("select");
+
+    if(firstClassOnly){
+        let option = document.createElement("option");
+            option.value = costs[0];
+            option.text = classes[0] +" " + costs[0] + "chf";
+            prices.appendChild(option);
+    }else{
+        //Create and append the options
+        for (i  in costs) {
+            let option = document.createElement("option");
+            option.value = costs[i];
+            option.text = classes[i] + " " + costs[i] + "chf";
+            prices.appendChild(option);
+        }
+    }
+    // append drop down list to price cell
+    priceCell.appendChild(prices);
+}
+
+
+function printFullTimetable(schedule,table,index){
     fullTable = schedule.fullTable;
     const dep = {"city":fullTable[0].city, "departure": datetoHHmm(fullTable[0].dep)};
     const arr = {"city":fullTable[fullTable.length - 1].city, "arrival": datetoHHmm(fullTable[fullTable.length - 1].arr)};
@@ -174,6 +221,7 @@ function printMoreInfo(schedule,table,index){
     addMoreInfoRow(table,index,arr.city, arr.arrival);
 
 }
+
 function addMoreInfoRow(table,index,city,time = ""){
     let moreInfoRow = table.insertRow(-1);
     moreInfoRow.className = "moreInfoRow" + index;
@@ -186,7 +234,6 @@ function addMoreInfoRow(table,index,city,time = ""){
     textCell.style.padding = '0 0 0 10px';
     textCell.style.fontStyle = 'italic';
     textCell.style.fontSize = '0.8rem';
-    
 }
 
 // Help functions
@@ -211,3 +258,16 @@ function hoursFromMiliseconds(time){
     const hour = (time - minInMili )/ (1000*60*60);
     return hour + "h " + min +"m";
 }
+
+$( function() {
+    $( "#InputFrom" ).autocomplete({
+      source: Cities
+    });
+    $( "#InputTo" ).autocomplete({
+        source: Cities
+      });
+});
+
+
+
+

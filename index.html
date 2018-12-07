@@ -6,6 +6,8 @@
     <script src="jquery-3.3.1.min.js"></script>
     <script src="script.js"></script>
     <script type="text/javascript" src="citiesData.json"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -19,9 +21,9 @@
         </header>
 
         <div class="main"> 
-            <form action="test.php" method="POST">
-                <input type="text" id="InputFrom" placeholder="From" autocomplete="off">
-                <input type="text" id="InputTo" placeholder="To" autocomplete="off">
+            <form action="test.php" method="POST" autocomplete="off">
+                <div class="ui-widget"><input type="text" id="InputFrom" placeholder="From" ></div>
+                <div class="ui-widget"><input type="text" id="InputTo" placeholder="To" ></div>
                 <input type="time" id="time" name="time" placeholder="13:30"> 
                 <div id="toggle">
                     <span id="dep">Dep</span>

@@ -4,10 +4,9 @@ class Timetable {
     createTimetable(path, depOrArr) 
     { 
         this.distance = this.path_dist(path);
-        const cost = this.path_cost(path);
         const changes = countChanges(path);
 
-        this.cost = {"first": cost[0], "second": cost[1], "third": cost[2]};
+        this.cost = this.path_cost(path);
         this.schedule = [];
 
         // Calculate routes with time for different classes
@@ -18,15 +17,15 @@ class Timetable {
         let fo = fullobject(path, t);  
 
         if (fo1[0].dep.getTime() == fo[0].dep.getTime() && fo1[fo1.length-1].arr.getTime() == fo[fo.length-1].arr.getTime()){ // same for all classes
-            const arrivalNextDay = arrNextDay(fo1[0].dep,fo1[fo1.length-1].arr)
-            this.schedule.push({"changes": changes, "allowedClasses": 'All', "arrivalNextDay": arrivalNextDay, "fullTable": fo1})
+            const nrOfDays = getDays(fo1[0].dep,fo1[fo1.length-1].arr)
+            this.schedule.push({"changes": changes, "firstClassOnly": false, "nrOfDays": nrOfDays, "fullTable": fo1})
         }
         else{
-            const arrivalNextDay1 = arrNextDay(fo1[0].dep,fo1[fo1.length-1].arr)
-            this.schedule.push({"changes": changes, "allowedClasses": 'First class only', "arrivalNextDay": arrivalNextDay1, "fullTable": fo1})
+            const nrOfDays1 = getDays(fo1[0].dep,fo1[fo1.length-1].arr)
+            this.schedule.push({"changes": changes, "firstClassOnly": true, "nrOfDays": nrOfDays1, "fullTable": fo1})
 
-            const arrivalNextDay = arrNextDay(fo[0].dep,fo[fo.length-1].arr,)
-            this.schedule.push({"changes": changes, "allowedClasses": 'All', "arrivalNextDay": arrivalNextDay, "fullTable": fo})
+            const nrOfDays = getDays(fo[0].dep,fo[fo.length-1].arr,)
+            this.schedule.push({"changes": changes, "firstClassOnly": false, "nrOfDays": nrOfDays, "fullTable": fo})
         }
     };
 
@@ -203,9 +202,6 @@ function countChanges(fullPath){
     return count;
 }
 
-function arrNextDay(dep, arr){
-    if(dep.getHours() > arr.getHours()){
-        return true;   
-    }   
-    return false;
+function getDays(dep, arr){
+    return arr.getDate() - dep.getDate(); 
 }

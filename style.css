@@ -39,7 +39,7 @@ header{
 .main {
     width: 100%;
     margin: 0 auto; 
-    padding-bottom: 150px;
+    padding-bottom: 165px;
 }
 
 .footer{
@@ -77,10 +77,12 @@ input[type=text] {
     font-size: 14pt;
 
 }
+.ui-widget{
+    display: inline-block;
+}
 
 input[type=text]:focus,[type=time]:focus {
     border: 2px solid #555;
-   
 }
 
 input[type=time] {
@@ -252,7 +254,4 @@ figure.zoom {
 }
 
 
-  
- 
-   
 
