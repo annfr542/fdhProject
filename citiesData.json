@@ -1,9 +1,9 @@
 [
 	{
-		"city": "paris",
+		"city": "Paris",
 		"connectionWith": [
             {
-                "city":"mâcon",
+                "city":"Mâcon",
                 "departures":
                     [
                         {
@@ -23,10 +23,10 @@
         ]
 	},
 	{
-		"city": "mâcon",
+		"city": "Mâcon",
 		"connectionWith": [
             {
-                "city":"paris",
+                "city":"Paris",
                 "departures":
                     [
                         {   
@@ -44,7 +44,7 @@
                 "dist": 441 
             },
             {
-                "city":"bourg",
+                "city":"Bourg",
                 "departures":
                     [
                         {
@@ -74,10 +74,10 @@
         ]
     },
     {
-		"city": "bourg",
+		"city": "Bourg",
 		"connectionWith": [
             {
-                "city":"mâcon",
+                "city":"Mâcon",
                 "departures":
                     [
                         {   
@@ -105,7 +105,7 @@
                 "dist": 38  
             },
             {
-                "city":"pont-d'ain",
+                "city":"Pont-d'ain",
                 "departures":
                     [
                         {
@@ -135,10 +135,10 @@
         ]
     },
     {
-		"city": "pont-d'ain",
+		"city": "Pont-d'ain",
 		"connectionWith": [
             {
-                "city":"ambérieu",
+                "city":"Ambérieu",
                 "departures":
                     [
                         {   
@@ -167,7 +167,7 @@
                 "dist": 12 
             },
             {
-                "city":"bourg",
+                "city":"Bourg",
                 "departures":
                     [
                         {
@@ -187,10 +187,10 @@
         ]
 	},
     {
-		"city": "ambérieu",
+		"city": "Ambérieu",
 		"connectionWith": [
             {
-                "city":"culoz",
+                "city":"Culoz",
                 "departures":
                     [
                         {   
@@ -213,7 +213,7 @@
                 "dist": 50
             },
             {
-                "city":"pont-d'ain",
+                "city":"Pont-d'ain",
                 "departures":
                     [
                         {
@@ -231,7 +231,7 @@
                 "dist":  12
             },
             {
-                "city":"lyon",
+                "city":"Lyon",
                 "departures":
                     [
                         {
@@ -266,10 +266,10 @@
         ]
     },
     {
-		"city": "lyon",
+		"city": "Lyon",
 		"connectionWith": [
             {
-                "city":"ambérieu",
+                "city":"Ambérieu",
                 "departures":
                     [
                         {   
@@ -302,7 +302,7 @@
                 "dist": 43
             },
             {
-                "city":"avignon",
+                "city":"Avignon",
                 "departures":
                     [
                         {   
@@ -327,10 +327,10 @@
         ]
     },
     {
-		"city": "avignon",
+		"city": "Avignon",
 		"connectionWith": [
             {
-                "city":"lyon",
+                "city":"Lyon",
                 "departures":
                     [
                         {   
@@ -348,7 +348,7 @@
                 "dist": 232
             },
             {
-                "city":"marseille",
+                "city":"Marseille",
                 "departures":
                     [
                         {
@@ -373,10 +373,10 @@
         ]
     },
     {
-		"city": "marseille",
+		"city": "Marseille",
 		"connectionWith": [
             {
-                "city":"avignon",
+                "city":"Avignon",
                 "departures":
                     [
                         {
@@ -396,10 +396,10 @@
         ]
 	},
     {
-		"city": "culoz",
+		"city": "Culoz",
 		"connectionWith": [
             {
-                "city":"ambérieu",
+                "city":"Ambérieu",
                 "departures":
                     [
                         {
@@ -422,7 +422,7 @@
                 "dist": 50
             },
             {
-                "city":"aix-les-bains",
+                "city":"Aix-les-bains",
                 "departures":
                     [
                         {
@@ -440,7 +440,7 @@
                 "dist": 20
             },
             {
-                "city":"bellegarde",
+                "city":"Bellegarde",
                 "departures":
                     [
                         {
@@ -465,10 +465,10 @@
         ]
     },
     {
-		"city": "aix-les-bains",
+		"city": "Aix-les-bains",
 		"connectionWith": [
             {
-                "city":"culoz",
+                "city":"Culoz",
                 "departures":
                     [
                         {
@@ -491,7 +491,7 @@
                 "dist": 20
             },
             {
-                "city":"chambéry",
+                "city":"Chambéry",
                 "departures":
                     [
                         {
@@ -511,10 +511,10 @@
         ]
 	},
     {
-		"city": "chambéry",
+		"city": "Chambéry",
 		"connectionWith": [
             {
-                "city":"aix-les-bains",
+                "city":"Aix-les-bains",
                 "departures":
                     [
                         {
@@ -537,7 +537,7 @@
                 "dist": 16
             },
             {
-                "city":"saint-jean-de-maurienne",
+                "city":"Saint-jean-de-maurienne",
                 "departures":
                     [
                         {
@@ -552,10 +552,10 @@
         ]
     },
     {
-		"city": "saint-jean-de-maurienne",
+		"city": "Saint-jean-de-maurienne",
 		"connectionWith": [
             {
-                "city":"chambéry",
+                "city":"Chambéry",
                 "departures":
                     [
                         {
@@ -573,7 +573,7 @@
                 "dist": 70
             },
             {
-                "city":"turin",
+                "city":"Turin",
                 "departures":
                     [
                         {
@@ -588,10 +588,10 @@
         ]
 	},
     {
-		"city": "turin",
+		"city": "Turin",
 		"connectionWith": [
             {
-                "city":"saint-jean-de-maurienne",
+                "city":"Saint-jean-de-maurienne",
                 "departures":
                     [
                         {
@@ -604,7 +604,7 @@
                 "dist": 143
             },
             {
-                "city":"milan",
+                "city":"Milan",
                 "departures":
                     [
                         {
@@ -619,10 +619,10 @@
         ]
     },
     {
-		"city": "milan",
+		"city": "Milan",
 		"connectionWith": [
             {
-                "city":"turin",
+                "city":"Turin",
                 "departures":
                     [
                         {
@@ -637,10 +637,10 @@
         ]
     },
     {
-        "city": "bellegarde",
+        "city": "Bellegarde",
         "connectionWith": [
             {
-                "city":"collonges",
+                "city":"Collonges",
                 "departures":
                     [
                         {
@@ -663,7 +663,7 @@
                 "dist": 11
             },
             {
-                "city":"la plaine",
+                "city":"La Plaine",
                 "departures":
                     [
                         {
@@ -676,7 +676,7 @@
                 "dist": 19
             },
             {
-                "city":"culoz",
+                "city":"Culoz",
                 "departures":
                     [
                         {
@@ -701,10 +701,10 @@
         ]
     },
     {
-		"city": "collonges",
+		"city": "Collonges",
 		"connectionWith": [
             {
-                "city":"bellegarde",
+                "city":"Bellegarde",
                 "departures":
                     [
                         {
@@ -727,7 +727,7 @@
                 "dist": 11
             },
             {
-                "city":"chancy",
+                "city":"Chancy",
                 "departures":
                     [
                         {
@@ -752,10 +752,10 @@
         ]
     },
     {
-		"city": "chancy",
+		"city": "Chancy",
 		"connectionWith": [
             {
-                "city":"collonges",
+                "city":"Collonges",
                 "departures":
                     [
                         {
@@ -778,7 +778,7 @@
                 "dist": 3
             },
             {
-                "city":"la plaine",
+                "city":"La Plaine",
                 "departures":
                     [
                         {
@@ -803,10 +803,10 @@
         ]
     },
     {
-		"city": "la plaine",
+		"city": "La Plaine",
 		"connectionWith": [
             {
-                "city":"chancy",
+                "city":"Chancy",
                 "departures":
                     [
                         {
@@ -829,7 +829,7 @@
                 "dist": 5
             },
             {
-                "city":"satigny",
+                "city":"Satigny",
                 "departures":
                     [
                         {
@@ -859,10 +859,10 @@
         ]
     },
     {
-		"city": "satigny",
+		"city": "Satigny",
 		"connectionWith": [
             {
-                "city":"la plaine",
+                "city":"La Plaine",
                 "departures":
                     [
                         {
@@ -885,7 +885,7 @@
                 "dist": 5
             },
             {
-                "city":"meyrin",
+                "city":"Meyrin",
                 "departures":
                     [
                         {
@@ -915,10 +915,10 @@
         ]
     },
     {
-		"city": "meyrin",
+		"city": "Meyrin",
 		"connectionWith": [
             {
-                "city":"satigny",
+                "city":"Satigny",
                 "departures":
                     [
                         {
@@ -941,7 +941,7 @@
                 "dist": 4
             },
             {
-                "city":"genève",
+                "city":"Genève",
                 "departures":
                     [
                         {
@@ -971,10 +971,10 @@
         ]
     },
     {
-		"city": "genève",
+		"city": "Genève",
 		"connectionWith": [
             {
-                "city":"meyrin",
+                "city":"Meyrin",
                 "departures":
                     [
                         {
@@ -997,7 +997,7 @@
                 "dist": 6
             },
             {
-                "city":"chambésy",
+                "city":"Chambésy",
                 "departures":
                     [
                         {
@@ -1017,10 +1017,10 @@
         ]
     },
     {
-        "city": "chambésy",
+        "city": "Chambésy",
 		"connectionWith": [
             {
-                "city":"genthod",
+                "city":"Genthod",
                 "departures":
                     [
                         {
@@ -1040,10 +1040,10 @@
         ]
     },
     {
-        "city": "genthod",
+        "city": "Genthod",
 		"connectionWith": [
             {
-                "city":"versoix",
+                "city":"Versoix",
                 "departures":
                     [
                         {
@@ -1063,10 +1063,10 @@
         ]
     },
     {
-        "city": "versoix",
+        "city": "Versoix",
 		"connectionWith": [
             {
-                "city":"coppet",
+                "city":"Coppet",
                 "departures":
                     [
                         {
@@ -1086,10 +1086,10 @@
         ]
     },
     {
-        "city": "coppet",
+        "city": "Coppet",
 		"connectionWith": [
             {
-                "city":"céligny",
+                "city":"Céligny",
                 "departures":
                     [
                         {
@@ -1109,10 +1109,10 @@
         ]
     },
     {
-        "city": "céligny",
+        "city": "Céligny",
 		"connectionWith": [
             {
-                "city":"nyon",
+                "city":"Nyon",
                 "departures":
                     [
                         {
@@ -1132,10 +1132,10 @@
         ]
     },
     {
-        "city": "nyon",
+        "city": "Nyon",
 		"connectionWith": [
             {
-                "city":"rolle",
+                "city":"Rolle",
                 "departures":
                     [
                         {
@@ -1155,10 +1155,10 @@
         ]
     },
     {
-        "city": "rolle",
+        "city": "Rolle",
 		"connectionWith": [
             {
-                "city":"morges",
+                "city":"Morges",
                 "departures":
                     [
                         {
@@ -1178,10 +1178,10 @@
         ]
     },
     {
-        "city": "morges",
+        "city": "Morges",
 		"connectionWith": [
             {
-                "city":"lausanne",
+                "city":"Lausanne",
                 "departures":
                     [
                         {
@@ -1201,10 +1201,10 @@
         ]
     },
     {
-        "city": "lausanne",
+        "city": "Lausanne",
 		"connectionWith": [
             {
-                "city":"yverdon",
+                "city":"Yverdon",
                 "departures":
                     [
                         {
@@ -1222,7 +1222,7 @@
                 "dist": 25
             },
             {
-                "city":"genève",
+                "city":"Genève",
                 "departures":
                     [
                         {
@@ -1237,10 +1237,10 @@
         ]
     },
     {
-        "city": "yverdon",
+        "city": "Yverdon",
 		"connectionWith": [
             {
-                "city":"lausanne",
+                "city":"Lausanne",
                 "departures":
                     [
                         {
