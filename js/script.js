@@ -1,8 +1,8 @@
 // create a graph
 let graph;
 let Cities = [];
-$.getJSON( "citiesData.json", function( data ) {
-    $.getScript("graph.js", function() {
+$.getJSON( "data/citiesData.json", function( data ) {
+    $.getScript("js/graph.js", function() {
         graph = new Graph(data.length);
         // Add all nodes
         for (i = 0; i < data.length; i++) { 
@@ -37,7 +37,7 @@ whenDocumentLoaded(() => {
 });
 
 let timeTable = {};
-$.getScript("timetable.js", function(){
+$.getScript("js/timetable.js", function(){
     timeTable = new Timetable();
 })
 let depOrArr = 1; //global variable for the depart/arrival box. 1 = dep, 0 = arr;
