@@ -213,7 +213,7 @@ tbody{
 
 /*info pages*/
 .info{
-    width: 60%;
+    width: 55%;
     margin: auto;
 }
 h1{
@@ -245,11 +245,11 @@ figure.zoom {
   }
 
   figure#zoom1 {
-    background-image: url("mapSmall.jpg");
+    background-image: url("../img/mapSmall.jpg");
   }
 
   figure#zoom2 {
-    background-image: url("timetableSmall.jpg");
+    background-image: url("../img/timetableSmall.jpg");
   }
  
 .images {

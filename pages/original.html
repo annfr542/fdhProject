@@ -1,0 +1,77 @@
+<!doctype html>
+
+<head>
+    <title>Travel in 1858</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="../js/zoom.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href ="../index.html"><img src="../img/logo.png" class="logo" alt="Logo"></a>
+            <a HREF="about.html" class="menu">About</a>
+            <a HREF="original.html" class="menu">Original document</a>
+            <a HREF="../index.html" class="menu">Search</a>
+        </header>
+
+        <div class ="main">
+            <div class="info">
+                <h1>Original document</h1>
+                <hr>
+                <p>The used document for this project can be found in Bibliothèque Nationale de France's (BNF) digital library, 
+                    <a href = “https://gallica.bnf.fr/ark:/12148/btv1b8441301x.r=suisse%20train?rk=21459%3B2”>Gallica.</a>
+                    <br><br>
+                    The map was created by Alfred Potiquet (1820-1883), a civil engineer known for being responsible 
+                    of the first stamp catalogue in the world, in 1861. The full title is Chemin de fer de Lyon à Genève.
+                     Marche des trains depuis le 10 novembre 1858. Correspondances avec les chemins de fer de France, 
+                     de Suisse & d'Italie. As the title implies, it contains the complete timetable for trains between Lyon 
+                     and Geneva, but also the connections between Swiss, French and Italian trains. 
+                    <br><br>
+                    The document can be divided into two parts, the first part is the timetable with all the information
+                     about stops, departures, prices, distances and arrivals for each route. For each of the routes,
+                      one can read the prices for each class (first, second and third), the distance between the destination’s
+                       and the different departure and arrival times. The prices and distances are written in regard to the 
+                       first city of the route.
+                    <br><br>
+                    The other part is the map over the entire system where all the stops are marked. 
+                    The bigger cities where one could change trains is marked with a bigger font,
+                     as seen in the images below.
+                    <br><br>
+
+                </p>
+            </div>
+
+           <div class ="images">
+                <figure class="zoom" id="zoom1" onmousemove="zoom(event)">
+                        <img src="../img/mapSmall.jpg" width="100%"/>
+                </figure>
+                <figure class="zoom" id="zoom2" onmousemove="zoom(event)">
+                        <img src="../img/timetableSmall.jpg" width="100%"/>
+                </figure>
+            </div>
+            <div class="info">
+                <p>     A few observations have been made while working with the document. 
+                        Firstly, some trains are written as "express" and are first-class trains only. 
+                        These are normally faster and creates better connections with other trains. 
+                        Secondly, the schedules were based on a 12-hours format, with the indications of "matin"
+                         (=morning) and "soir" (=evening) to know if it is am or pm. However, 
+                         these indications are not always clear, and it was a bit confusing to know whether
+                          the train left in the morning or in the evening. Furthermore, some small incoherences
+                           were observed in the timetables, for example the distance is sometimes different if 
+                           one goes from A to B or from B to A and same goes for the prices. However, these differences
+                            are usually not more than a couple of kilometres or a couple of cents so during our extracting
+                             phase they were rationalized.</p>
+            </div>
+          
+        
+        <div style="clear:both;"></div>
+
+        <div class="footer"> <img class="footerImage" src="../img/footer.jpg" alt="Footer"></div>
+    </div>
+</body>
+</html>
+
+
