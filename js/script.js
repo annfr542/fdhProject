@@ -1,6 +1,11 @@
 // create a graph
 let graph;
 let Cities = [];
+let timeTable = {};
+$.getScript("js/timetable.js", function(){
+    timeTable = new Timetable();
+})
+
 $.getJSON( "data/citiesData.json", function( data ) {
     $.getScript("js/graph.js", function() {
         graph = new Graph(data.length);
@@ -16,7 +21,10 @@ $.getJSON( "data/citiesData.json", function( data ) {
                 graph.addEdge(data[i].city,data[i].connectionWith[j]);
             }
         }
-        graph.printGraph();
+    });
+    // Evaluate the accuracy of graph
+    $.getJSON("controlData.json", testElements => {
+        tester(testElements,graph);
     });
 });
 
@@ -36,10 +44,6 @@ whenDocumentLoaded(() => {
     document.getElementById('time').value = datetoHHmm(today);
 });
 
-let timeTable = {};
-$.getScript("js/timetable.js", function(){
-    timeTable = new Timetable();
-})
 let depOrArr = 1; //global variable for the depart/arrival box. 1 = dep, 0 = arr;
 let inputFrom = "";
 let inputTo = "";
@@ -277,6 +281,41 @@ $( function() {
 function firstToUpper(string) 
 {
     return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+/* Automatic test function: "testData" is an array of correct value, "graph" is the used graph
+test[0] = from
+test[1] = to
+test[2] = Price first class
+test[3] = Price second class
+test[4] = Price third class
+test[5] = distance
+ */
+function tester(testData, graph){
+    let distTest = [];
+    let class1Test = [];
+    let class2Test = [];
+    let class3Test = [];
+
+    for (test of testData){
+
+        let path = graph.findpath(test[0], test[1]);
+        timeTable.createTimetable(path,true);
+
+        distTest.push(timeTable.distance == test[5]);
+        class1Test.push(timeTable.cost[0] == test[2]);
+        class2Test.push(timeTable.cost[1] == test[3]);
+        class3Test.push(timeTable.cost[2] == test[4]);
+    }
+
+    function add(a, b) {
+        return a + b;
+    }
+    
+    console.log("Distance accuracy: " + distTest.reduce(add, 0)/distTest.length);
+    console.log("Price class 1 accuracy: " + class1Test.reduce(add, 0)/class1Test.length);
+    console.log("Price class 2 accuracy: " + class2Test.reduce(add, 0)/class2Test.length);
+    console.log("Price class 3 accuracy: " + class3Test.reduce(add, 0)/class3Test.length);
 }
 
 

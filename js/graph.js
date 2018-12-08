@@ -10,7 +10,6 @@ class Graph {
         this.connections = new Map();
     } 
   
-  
     addVertex(v) 
     { 
     // initialize the adjacent list with a 
@@ -18,10 +17,8 @@ class Graph {
     this.AdjList.set(v.toLowerCase(), []); 
     }  
     
-    // add edge to the graph 
     addEdge(v, w) 
     { 
-
         // get the list for vertex v and put the 
         // vertex w denoting edge betweeen v and w 
         this.AdjList.get(v.toLowerCase()).push(w.city.toLowerCase()); 
@@ -30,30 +27,6 @@ class Graph {
         const key = v.toLowerCase() + w.city.toLowerCase();
         this.connections.set(key, connction);
     } 
-
-    // Prints the vertex and adjacency list 
-    printGraph() 
-    { 
-        // get all the vertices 
-        const get_keys = this.AdjList.keys(); 
-    
-        // iterate over the vertices 
-        for (let i of get_keys)  
-    { 
-            // great the corresponding adjacency list 
-            // for the vertex 
-            const get_values = this.AdjList.get(i); 
-            let conc = ""; 
-    
-            // iterate over the adjacency list 
-            // concatenate the values into a string 
-            for (let j of get_values) 
-                conc += j.city + " "; 
-    
-            // print the vertex and its adjacency list 
-            //console.log(i + " -> " + conc); 
-        } 
-    }  
     
     // utility function for finding paths in graph 
     // from source to destination 
