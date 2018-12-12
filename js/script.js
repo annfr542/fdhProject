@@ -22,10 +22,6 @@ $.getJSON( "data/citiesData.json", function( data ) {
             }
         }
     });
-    // Evaluate the accuracy of graph
-    $.getJSON("controlData.json", testElements => {
-        tester(testElements,graph);
-    });
 });
 
 function whenDocumentLoaded(action) {
@@ -71,6 +67,14 @@ function arrival(){
 }
 
 function printResult() {
+
+     /* 
+     // Evaluate the accuracy of graph
+     $.getJSON("controlData.json", testElements => {
+        tester(testElements,graph);
+        });
+    */
+
     inputFrom = document.getElementById("InputFrom").value.toLowerCase();
     inputTo = document.getElementById("InputTo").value.toLowerCase();
     // find path, distance, schedules
@@ -298,14 +302,15 @@ function tester(testData, graph){
     let class3Test = [];
 
     for (test of testData){
-
         let path = graph.findpath(test[0], test[1]);
-        timeTable.createTimetable(path,true);
+        if(path){
+            timeTable.createTimetable(path,true);
 
-        distTest.push(timeTable.distance == test[5]);
-        class1Test.push(timeTable.cost[0] == test[2]);
-        class2Test.push(timeTable.cost[1] == test[3]);
-        class3Test.push(timeTable.cost[2] == test[4]);
+            distTest.push(Math.abs(timeTable.distance - test[5])<= 1);
+            class1Test.push(Math.abs(timeTable.cost[0] -test[2]) <= 1);
+            class2Test.push(Math.abs(timeTable.cost[1] - test[3]) <= 1);
+            class3Test.push(Math.abs(timeTable.cost[2] - test[4]) <= 1);
+        }
     }
 
     function add(a, b) {
