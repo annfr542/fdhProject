@@ -126,7 +126,7 @@ function addEntryToTimetable(schedule,costs,dist,table,index){
     // Insert the cells for the main information
     newRow.insertCell(0);
     newRow.insertCell(1).appendChild(document.createTextNode(datetoHHmm(dep)));
-    const arrival = schedule.nrOfDays > 0 ? datetoHHmm(arr) + " +" + schedule.nrOfDays +"day" : datetoHHmm(arr);
+    const arrival = schedule.nrOfDays < 1 ? datetoHHmm(arr) : schedule.nrOfDays > 1 ? datetoHHmm(arr) + " +" + schedule.nrOfDays +" days" : datetoHHmm(arr) + " +" + schedule.nrOfDays +" day";
     newRow.insertCell(2).appendChild(document.createTextNode(arrival));
     newRow.insertCell(3).appendChild(document.createTextNode(travelTime));
     newRow.insertCell(4).appendChild(document.createTextNode(changes));
@@ -155,7 +155,7 @@ function addEntryToTimetable(schedule,costs,dist,table,index){
     
     // Add distance
     const distCell = moreInfoRow.insertCell(-1)
-    distCell.appendChild(document.createTextNode("Distance: " + dist + "km"));
+    distCell.appendChild(document.createTextNode("Distance: " + dist + " km"));
     distCell.style.fontSize ='0.9rem';
     distCell.colSpan = '2';
 
@@ -198,14 +198,14 @@ function printPrices(costs,firstClassOnly,moreInfoRow){
     if(firstClassOnly){
         let option = document.createElement("option");
             option.value = costs[0];
-            option.text = classes[0] +" " + costs[0].toFixed(1) + "CHF";
+            option.text = classes[0] +" " + costs[0].toFixed(1) + " fr.";
             prices.appendChild(option);
     }else{
         //Create and append the options
         for (i  in costs) {
             let option = document.createElement("option");
             option.value = costs[i];
-            option.text = classes[i] + " " + costs[i].toFixed(1) + "CHF";
+            option.text = classes[i] + " " + costs[i].toFixed(1) + " fr.";
             prices.appendChild(option);
         }
     }
